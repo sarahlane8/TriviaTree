@@ -1,7 +1,7 @@
 import { filterQuestionsData } from './cleaningFunctions'
 
 export const getQuestions = () => {
-  return fetch('https://opentdb.com/api.php?amount=10&category=19&difficulty=easy')
+  return fetch('https://opentdb.com/api.php?amount=10&category=19&type=boolean')
     .then(response => checkResponse(response))
     .then(data => filterQuestionsData(data))
 }
