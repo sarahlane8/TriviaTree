@@ -1,11 +1,13 @@
 import './Questions.css'
+import QuestionCard from '../QuestionCard/QuestionCard'
 
 
 const Questions = ({ questions }) => {
-  console.log(questions)
-  const questionsCards = questions.map(question => {
+  console.log(6, questions)
+  const questionCards = questions.map((question, index) => {
     return(
       <QuestionCard
+        id={Date.now()+index}
         question={question.question}
         answer={question.answer}
       />
@@ -13,10 +15,9 @@ const Questions = ({ questions }) => {
   })
   return(
     <section className='questions-grid'>
-      {questionsCards}
+      {questionCards}
     </section>
-)
-
+  )
 }
 
 
