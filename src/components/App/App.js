@@ -3,6 +3,7 @@ import React, { Component } from "react"
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import NavBar from '../NavBar/NavBar'
 import Form from '../Form/Form'
+import Questions from '../Questions/Questions'
 import { getQuestions } from '../../utils/apiCalls'
 
 
@@ -33,7 +34,7 @@ class App extends Component {
             exact path='/'
             render={ () => {
               return(
-                <Form getQuestions={this.fetchQuestions}/>
+                <Form getQuestions={this.fetchQuestions} />
               )
             }}
           />
@@ -42,7 +43,7 @@ class App extends Component {
             exact path ='/questions'
             render={ () => {
               return(
-                <Questions questions={this.state.questions}
+                <Questions questions={this.state.questions} />
               )
             }}
           />
