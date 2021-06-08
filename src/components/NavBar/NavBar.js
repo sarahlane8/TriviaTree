@@ -3,7 +3,7 @@ import treeIconSrc from '../../utils/treeIconSrc'
 
 const NavBar = () => {
   return(
-    <nav>
+    <nav className='nav-bar'>
       <img src={treeIconSrc} alt='cartoon tree' />
       <h1>Trivia Tree</h1>
       <div className='nav-links'>
