@@ -50,3 +50,8 @@ Add features with gifs here
 After completing the steps above to clone the repo:  
 1. Run `$npx cypress open` to open the Cypress testing GUI
 2. Click on an integration test and allow the test to run
+
+
+## Project Reflection and Individual Learning Goals
+
+- Reflection
