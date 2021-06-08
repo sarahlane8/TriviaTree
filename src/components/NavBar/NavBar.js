@@ -5,6 +5,7 @@ const NavBar = () => {
   return(
     <nav>
       <img src={treeIconSrc} alt='cartoon tree' />
+      <h1>Trivia Tree</h1>
       <div className='nav-links'>
         <button>Home</button>
         <button>Saved Questions</button>
