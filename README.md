@@ -69,3 +69,24 @@ Add iterations here
     <img width="150" height="auto" src="https://user-images.githubusercontent.com/70901622/120944450-cafe1800-c6f1-11eb-96f2-5e18fdb2a96e.png" alt="Sarah's GH img">
   </td>
 </table>
+
+#### Project Managers
+<table>
+  <tr>
+    <td> Leta Keane <a href="https://github.com/letakeane">GH</td>
+    <td> Scott Ertmer <a href="https://github.com/sertmer">GH</td>
+  </tr>
+  <td>
+    <img src="https://avatars.githubusercontent.com/u/22563791?v=4" alt="Leta's GH img"
+ width="150" height="auto" />
+ </td>
+  <td>
+    <img src="https://avatars.githubusercontent.com/u/49926352?v=4" alt="Scott's GH img"
+ width="150" height="auto" />
+ </td>
+</table>
+
+**************************************************************************
+This project was created for [Turing School of Software and Design](https://turing.io/)
+##### 06/14/2021
+**[Back to top](#table-of-contents)**
