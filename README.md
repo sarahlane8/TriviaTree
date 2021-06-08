@@ -52,6 +52,10 @@ After completing the steps above to clone the repo:
 2. Click on an integration test and allow the test to run
 
 
-## Project Reflection and Individual Learning Goals
+## Project Reflection
 
 - Reflection
+
+
+## Future Iterations
+Add iterations here
