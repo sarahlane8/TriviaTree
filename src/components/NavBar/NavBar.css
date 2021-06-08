@@ -21,3 +21,9 @@ button {
   font-weight: bolder;
   padding: 8px;
 }
+
+
+button:hover {
+  background-color: #DE5476;
+  color: #D6EDFF;
+}
