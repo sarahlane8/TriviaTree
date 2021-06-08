@@ -10,14 +10,20 @@ const QuestionCard = ({ question, answer }) => {
 
   return(
     <div className='flip-card' >
-      <article className='question-card'>
-        <p dangerouslySetInnerHTML={ createMarkUpData(question) } />
-      </article>
-      <article className='answer' >
-        <p dangerouslySetInnerHTML={ createMarkUpData(answer) } />
-      </article>
+      <div className='flip-card-inner'>
+        <article className='question-card'>
+          <p dangerouslySetInnerHTML={ createMarkUpData(question) } />
+        </article>
+        <article className='answer' >
+          <p dangerouslySetInnerHTML={ createMarkUpData(answer) } />
+        </article>
+      </div>
     </div>
   )
 }
+
+
+
+
 
 export default QuestionCard

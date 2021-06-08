@@ -1,7 +1,35 @@
-.question-card {
-  background-color: white;
+.flip-card {
+  background-color: transparent;
   border-radius: 15px;
   width: 300px;
   height: 300px;
   perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.question-card, .answer {
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.answer {
+  background-color: white;
+  color: green;
+  transform: rotateY(180deg);
 }
