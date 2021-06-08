@@ -1,7 +1,7 @@
-# BookWorm
+# Trivia Tree
 
 ### Table of Contents
-- [BookWorm](#bookworm)
+- [Trivia Tree](#trivia-tree)
   - [Overview](#overview)
   - [Learning Goals](#learning-goals)
   - [Features](#features)
@@ -56,6 +56,16 @@ After completing the steps above to clone the repo:
 
 - Reflection
 
-
 ## Future Iterations
 Add iterations here
+
+## Credits
+#### Authors
+<table>
+  <tr>
+    <td> Sarah Lane <a href="https://github.com/sarahlane8">GH</td>
+  </tr>
+  <td>
+    <img width="150" height="auto" src="https://user-images.githubusercontent.com/70901622/120944450-cafe1800-c6f1-11eb-96f2-5e18fdb2a96e.png" alt="Sarah's GH img">
+  </td>
+</table>
