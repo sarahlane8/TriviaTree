@@ -28,7 +28,7 @@ class App extends Component {
         <NavBar />
 
         <Switch>
-        
+
           <Route
             exact path='/'
             render={ () => {
@@ -38,6 +38,14 @@ class App extends Component {
             }}
           />
 
+          <Route
+            exact path ='/questions'
+            render={ () => {
+              return(
+                <Questions questions={this.state.questions}
+              )
+            }}
+          />
 
         </Switch>
       </main>
