@@ -9,19 +9,25 @@ class App extends Component {
       questions: []
     }
   }
+
+  fetchQuestions = () = {
+    
+  }
+
+
+
   render() {
 
-  return (
-    <div className="App">
+    return (
+      <div className="App">
 
-        <p>
+          <p>
+            Learn React
+          </p>
 
-          Learn React
-        </p>
-
-    </div>
-  )
-}
+      </div>
+    )
+  }
 }
 
 export default App;
