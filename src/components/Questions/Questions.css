@@ -1,0 +1,9 @@
+.questions-grid {
+  display: grid;
+ grid-template-columns: repeat(3, 356px);
+ column-gap: 40px;
+ row-gap: 48px;
+ justify-content: center;
+ margin: 24px auto;
+ /* overflow: scroll; */
+}
