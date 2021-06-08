@@ -1,6 +1,6 @@
 import './App.css';
 import React, { Component } from "react"
-import '../NavBar/NavBar'
+import NavBar from '../NavBar/NavBar'
 
 
 class App extends Component {
@@ -21,6 +21,7 @@ class App extends Component {
 
     return (
       <div className="App">
+      <NavBar />
 
           <p>
             Learn React
