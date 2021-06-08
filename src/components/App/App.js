@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="App">
 
-        </p>
+        <p>
 
           Learn React
         </p>
