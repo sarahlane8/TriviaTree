@@ -1,10 +1,10 @@
 import './Form.css'
 
-const Form = () => {
+const Form = ({ getQuestions }) => {
   return (
     <div className="questions-form">
       <h2>Click the button for questions!</h2>
-      <button>QUIZ ME!</button>
+      <button onClick={ () => getQuestions() }>QUIZ ME!</button>
     </div>
   )
 }

@@ -3,6 +3,7 @@ import React, { Component } from "react"
 import { BrowserRouter as Router } from 'react-router-dom'
 import NavBar from '../NavBar/NavBar'
 import Form from '../Form/Form'
+import { getQuestions } from '../../utils/apiCalls'
 
 
 class App extends Component {
@@ -14,7 +15,8 @@ class App extends Component {
   }
 
   fetchQuestions = () => {
-
+    getQuestions()
+    .then(data => console.log(data))
   }
 
 
@@ -24,7 +26,7 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar />
-        <Form />
+        <Form getQuestions={this.fetchQuestions}/>
       </div>
     )
   }
