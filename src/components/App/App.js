@@ -1,16 +1,35 @@
 import './App.css';
+import React, { Component } from "react"
+import NavBar from '../NavBar/NavBar'
 
-function App() {
-  return (
-    <div className="App">
 
-        <p>
+class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      questions: []
+    }
+  }
 
-          Learn React
-        </p>
+  fetchQuestions = () => {
 
-    </div>
-  );
+  }
+
+
+
+  render() {
+
+    return (
+      <div className="App">
+      <NavBar />
+
+          <p>
+            Learn React
+          </p>
+
+      </div>
+    )
+  }
 }
 
 export default App;
