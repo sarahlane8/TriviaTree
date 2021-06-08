@@ -3,14 +3,20 @@ import './QuestionCard.css'
 
 const QuestionCard = ({ question, answer }) => {
 
-  function createMarkUp() {
-    return {__html: question }
+  const createMarkUpData = (data) => {
+    return {__html: data }
   }
 
+
   return(
-    <article className='question-card'>
-      <p dangerouslySetInnerHTML={ createMarkUp() } />
-    </article>
+    <div className='flip-card' >
+      <article className='question-card'>
+        <p dangerouslySetInnerHTML={ createMarkUpData(question) } />
+      </article>
+      <article className='answer' >
+        <p dangerouslySetInnerHTML={ createMarkUpData(answer) } />
+      </article>
+    </div>
   )
 }
 
