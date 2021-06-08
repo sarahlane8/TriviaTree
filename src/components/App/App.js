@@ -1,6 +1,16 @@
 import './App.css';
+import React, { Component } from "react"
 
-function App() {
+
+class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      questions: []
+    }
+  }
+  render() {
+
   return (
     <div className="App">
 
@@ -10,7 +20,8 @@ function App() {
         </p>
 
     </div>
-  );
+  )
+}
 }
 
 export default App;
