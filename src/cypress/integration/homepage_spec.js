@@ -11,4 +11,11 @@ describe('Homepage', () => {
       .get('.nav-links > button').eq(0).should('contain', 'Home')
       .get('.nav-links > button').eq(1).should('contain', 'Saved Questions')
   })
+
+  it('Should display the form', () => {
+    cy.get('.questions-form').should('be.visible')
+      .get('.questions-form > h2').should('contain', 'Click the button for questions!')
+      .get('.questions-form > button').should('contain', 'QUIZ ME!')
+  })
+
 })
