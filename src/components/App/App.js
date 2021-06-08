@@ -1,6 +1,7 @@
 import './App.css';
 import React, { Component } from "react"
 import NavBar from '../NavBar/NavBar'
+import Form from '../Form/Form'
 
 
 class App extends Component {
@@ -21,12 +22,8 @@ class App extends Component {
 
     return (
       <div className="App">
-      <NavBar />
-
-          <p>
-            Learn React
-          </p>
-
+        <NavBar />
+        <Form />
       </div>
     )
   }
