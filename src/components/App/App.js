@@ -1,5 +1,6 @@
 import './App.css';
 import React, { Component } from "react"
+import '../NavBar/NavBar'
 
 
 class App extends Component {
@@ -10,8 +11,8 @@ class App extends Component {
     }
   }
 
-  fetchQuestions = () = {
-    
+  fetchQuestions = () => {
+
   }
 
 
