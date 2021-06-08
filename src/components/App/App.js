@@ -16,7 +16,7 @@ class App extends Component {
 
   fetchQuestions = () => {
     getQuestions()
-    .then(data => console.log(data))
+    .then(data => this.setState({ questions: data}, () => console.log(this.state)) )
   }
 
 
