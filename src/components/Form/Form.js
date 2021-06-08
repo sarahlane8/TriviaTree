@@ -1,9 +1,11 @@
+import './Form.css'
+
 const Form = () => {
   return (
-    <form>
-      <p>Click the button for questions!</p>
+    <div className="questions-form">
+      <h2>Click the button for questions!</h2>
       <button>QUIZ ME!</button>
-    </form>
+    </div>
   )
 }
 
