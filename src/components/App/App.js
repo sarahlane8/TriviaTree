@@ -1,6 +1,6 @@
 import './App.css';
 import React, { Component } from "react"
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import NavBar from '../NavBar/NavBar'
 import Form from '../Form/Form'
 import { getQuestions } from '../../utils/apiCalls'
@@ -24,10 +24,23 @@ class App extends Component {
   render() {
 
     return (
-      <div className="App">
+      <main className="App">
         <NavBar />
-        <Form getQuestions={this.fetchQuestions}/>
-      </div>
+
+        <Switch>
+        
+          <Route
+            exact path='/'
+            render={ () => {
+              return(
+                <Form getQuestions={this.fetchQuestions}/>
+              )
+            }}
+          />
+
+
+        </Switch>
+      </main>
     )
   }
 }
