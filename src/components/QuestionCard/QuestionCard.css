@@ -16,7 +16,7 @@
 }
 
 
-.flip-card-inner:hover {
+.flip-card-inner:active {
   transform: rotateY(180deg);
   display: flex;
   align-items: center;
