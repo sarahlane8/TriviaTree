@@ -1,8 +1,23 @@
 .questions-grid {
   display: grid;
- grid-template-columns: repeat(3, 356px);
- column-gap: 40px;
- row-gap: 48px;
- justify-content: center;
- margin: 24px auto;
+  grid-template-columns: repeat(3, 356px);
+  column-gap: 40px;
+  row-gap: 48px;
+  justify-content: center;
+  margin: 24px auto;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1100px) {
+  .questions-grid {
+    grid-template-columns: repeat(2, 356px);
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .questions-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
