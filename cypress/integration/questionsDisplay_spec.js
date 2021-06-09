@@ -24,10 +24,26 @@ describe('Questions Display', () => {
   })
 
   it('Should save a card', () => {
+    cy.get('.flip-card > button').eq(0).should('contain', 'Save Question')
+      .get('.flip-card > button').eq(0).click()
+      .get('.flip-card > button').eq(0).should('contain', '⭐️ Saved! ⭐️')
 
+    cy.get('.flip-card > button').eq(1).should('contain', 'Save Question')
+      .get('.flip-card > button').eq(1).click()
+      .get('.flip-card > button').eq(1).should('contain', '⭐️ Saved! ⭐️')
   })
 
   it('Should unsave a saved card', () => {
+    cy.get('.flip-card > button').eq(0).should('contain', 'Save Question')
+      .get('.flip-card > button').eq(0).click()
+      .get('.flip-card > button').eq(0).should('contain', '⭐️ Saved! ⭐️')
+      .get('.flip-card > button').eq(0).click()
+      .get('.flip-card > button').eq(0).should('contain', 'Save Question')
 
+    cy.get('.flip-card > button').eq(1).should('contain', 'Save Question')
+      .get('.flip-card > button').eq(1).click()
+      .get('.flip-card > button').eq(1).should('contain', '⭐️ Saved! ⭐️')
+      .get('.flip-card > button').eq(1).click()
+      .get('.flip-card > button').eq(1).should('contain', 'Save Question')
   })
 })
