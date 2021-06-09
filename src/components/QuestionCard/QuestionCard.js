@@ -1,12 +1,13 @@
 import './QuestionCard.css'
+import DOMPurify from 'dompurify'
 
 
 const QuestionCard = ({ question, answer }) => {
 
   const createMarkUpData = (data) => {
-    return {__html: data }
+    let clean = DOMPurify.sanitize( data );
+    return {__html: clean }
   }
-
 
   return(
     <div className='flip-card' >
