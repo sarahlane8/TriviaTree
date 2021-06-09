@@ -30,5 +30,5 @@ Cypress.Commands.add('fetchQuestions', () => {
 
 Cypress.Commands.add('loadQuiz', () => {
   cy.visit('http://localhost:3000')
-    cy.get('.questions-form > a > button')
+    cy.get('.questions-form > a > button').click()
 })
