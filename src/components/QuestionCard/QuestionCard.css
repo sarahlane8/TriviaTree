@@ -36,6 +36,16 @@
   backface-visibility: hidden;
   font-size: 25px;
   font-weight: bolder;
+  overflow-y: scroll;
+}
+
+
+.question-card::-webkit-scrollbar {
+  display: none;
+}
+
+.answer::-webkit-scrollbar {
+  display: none;
 }
 
 
