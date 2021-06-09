@@ -56,9 +56,15 @@
 }
 
 
-img {
-  height: 50px;
+.flip-card > button {
+  font-size: 18px;
+  margin: 2px;
+  width: 150px;
+  height: 40px;
+  background-color: #478978;
+  color: #D6EDFF;
 }
+
 
 /* button {
   height: 15px;

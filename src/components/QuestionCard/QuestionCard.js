@@ -23,10 +23,10 @@ createMarkUpData = (data) => {
     return {__html: clean }
   }
 render() {
-const whichStar = this.state.isFavorited ? "https://drive.google.com/uc?export=view&id=13_jn9vQvAdNzdcbdRmYoR6mBOZHoeqzU" : "https://drive.google.com/uc?export=view&id=1TW-aKpR_uBW0Ayp6AtTqVq5cxuX27GiH"
+const whichStar = this.state.isFavorited ? "⭐️ Saved! ⭐️" : "Save Question"
   return(
     <div className='flip-card' >
-    <button onClick={ () => this.changeFavoritedStatus() }><img src={whichStar} /></button>
+    <button onClick={ () => this.changeFavoritedStatus() }>{whichStar}</button>
       <div className='flip-card-inner'>
         <article className='question-card'>
           <p dangerouslySetInnerHTML={this.createMarkUpData(this.props.question) } />
