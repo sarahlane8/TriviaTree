@@ -1,6 +1,6 @@
 .questions-grid {
   display: grid;
-  grid-template-columns: repeat(3, 356px);
+  grid-template-columns: repeat(4, 300px);
   column-gap: 40px;
   row-gap: 48px;
   justify-content: center;
@@ -10,11 +10,17 @@
 
 @media only screen and (max-width: 1100px) {
   .questions-grid {
-    grid-template-columns: repeat(2, 356px);
+    grid-template-columns: repeat(3, 300px);
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 1000px) {
+  .questions-grid {
+    grid-template-columns: repeat(2, 300px);
+  }
+}
+
+@media only screen and (max-width: 700px) {
   .questions-grid {
     display: flex;
     flex-direction: column;
