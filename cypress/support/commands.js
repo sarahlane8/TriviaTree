@@ -1,5 +1,5 @@
 Cypress.Commands.add('fetchQuestions', () => {
-  cy.intercept('https://opentdb.com/api.php?amount=10&category=19&type=boolean', {
+  cy.intercept('https://opentdb.com/api.php?amount=10&category=19&type=boolean',
     {
       "response_code": 0,
       "results": [
@@ -23,11 +23,12 @@ Cypress.Commands.add('fetchQuestions', () => {
           "False"
           ]
         }
-      }
+      ]
+
     })
 })
 
 Cypress.Commands.add('loadQuiz', () => {
   cy.visit('http://localhost:3000')
-    .get('.quiz-me').click()
+    cy.get('.quiz-me').click()
 })
