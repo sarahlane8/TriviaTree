@@ -1,11 +1,12 @@
 import './QuestionCard.css'
-import DOMPurify from 'dompurify'
 import { Component } from 'react'
+import DOMPurify from 'dompurify'
+
 
 
 class QuestionCard extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       isFavorited: false
     }

@@ -1,9 +1,10 @@
 describe('Homepage', () => {
-  beforeEach( () => {
-    cy.visit('http://localhost:3000')
-  })
+  // beforeEach( () => {
+  //   cy.visit('http://localhost:3000')
+  // })
 
   it('Should display the nav bar', () => {
+    cy.visit('http://localhost:3000')
     cy.get('.nav-bar').should('be.visible')
       .get('img').should('be.visible')
       .get('.nav-bar > h1').should('contain', 'Trivia Tree')

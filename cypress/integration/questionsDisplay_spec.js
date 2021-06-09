@@ -1,7 +1,7 @@
 describe('Questions Display', () => {
   beforeEach( () => {
     cy.fetchQuestions()
-    // cy.loadQuiz()
+    cy.loadQuiz()
 
   })
 
