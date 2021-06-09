@@ -66,6 +66,11 @@
 }
 
 
+.flip-card > button:hover {
+  background-color: #D6EDFF;
+  color: #DE5476;
+}
+
 /* button {
   height: 15px;
   width: 25px;
