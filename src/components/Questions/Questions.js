@@ -1,5 +1,6 @@
 import './Questions.css'
 import QuestionCard from '../QuestionCard/QuestionCard'
+import PropTypes from 'prop-types';
 
 
 const Questions = ({ questions }) => {
@@ -13,7 +14,7 @@ const Questions = ({ questions }) => {
       />
     )
   })
-  
+
   return(
     <section className='questions-grid'>
       {questionCards}
@@ -21,5 +22,8 @@ const Questions = ({ questions }) => {
   )
 }
 
+Questions.propTypes = {
+  questions: PropTypes.array
+}
 
 export default Questions
