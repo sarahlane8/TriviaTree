@@ -6,6 +6,8 @@ describe('Questions Display', () => {
   })
 
   it('Should display the question cards in a grid', () => {
+     cy.url().should('eq', 'http://localhost:3000/questions')
+
     cy.get('.nav-bar').should('be.visible')
       .get('img').should('be.visible')
       .get('.nav-bar > h1').should('contain', 'Trivia Tree')
