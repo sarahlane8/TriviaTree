@@ -3,7 +3,6 @@ import QuestionCard from '../QuestionCard/QuestionCard'
 
 
 const Questions = ({ questions }) => {
-  console.log(6, questions)
   const questionCards = questions.map((question, index) => {
     return(
       <QuestionCard
