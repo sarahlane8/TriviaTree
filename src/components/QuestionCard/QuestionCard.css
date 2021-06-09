@@ -1,6 +1,6 @@
 .flip-card {
   width: 300px;
-  height: 300px;
+  height: 350px;
   perspective: 1000px;
   position: relative;
 }
@@ -16,7 +16,7 @@
 }
 
 
-.flip-card-inner:hover {
+.flip-card-inner:active {
   transform: rotateY(180deg);
   display: flex;
   align-items: center;
@@ -36,10 +36,37 @@
   backface-visibility: hidden;
   font-size: 25px;
   font-weight: bolder;
+  overflow-y: scroll;
+}
+
+
+.question-card::-webkit-scrollbar {
+  display: none;
+}
+
+
+.answer::-webkit-scrollbar {
+  display: none;
 }
 
 
 .answer {
   transform: rotateY(180deg);
   font-size: 35px;
+}
+
+
+.flip-card > button {
+  font-size: 18px;
+  margin: 2px;
+  width: 150px;
+  height: 40px;
+  background-color: #478978;
+  color: #D6EDFF;
+}
+
+
+.flip-card > button:hover {
+  background-color: #D6EDFF;
+  color: #DE5476;
 }
