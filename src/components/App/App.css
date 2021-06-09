@@ -3,4 +3,5 @@
   font-family: 'Noto Sans KR', sans-serif;
   background-color: #DE5476;
   height: 100vh;
+  overflow: scroll;
 }
