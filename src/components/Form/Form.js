@@ -1,5 +1,6 @@
 import './Form.css'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 const Form = ({ getQuestions }) => {
   return (
@@ -10,6 +11,10 @@ const Form = ({ getQuestions }) => {
       </Link>
     </div>
   )
+}
+
+Form.propTypes = {
+  getQuestions: PropTypes.func
 }
 
 export default Form
