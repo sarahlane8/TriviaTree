@@ -1,6 +1,7 @@
 import './QuestionCard.css'
 import { Component } from 'react'
 import DOMPurify from 'dompurify'
+import PropTypes from 'prop-types'
 
 
 
@@ -43,6 +44,10 @@ class QuestionCard extends Component {
 
 
 
-
+QuestionCard.propTypes = {
+  id: PropTypes.number,
+  question: PropTypes.string,
+  answer: PropTypes.string
+}
 
 export default QuestionCard
