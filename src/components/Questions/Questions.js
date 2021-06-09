@@ -13,6 +13,7 @@ const Questions = ({ questions }) => {
       />
     )
   })
+  
   return(
     <section className='questions-grid'>
       {questionCards}
