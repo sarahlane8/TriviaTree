@@ -16,7 +16,7 @@ describe('Homepage', () => {
   it('Should display the form', () => {
     cy.get('.questions-form').should('be.visible')
       .get('.questions-form > h2').should('contain', 'Click the button for questions!')
-      .get('.questions-form > button').should('contain', 'QUIZ ME!')
+      .get('.questions-form > a > button').should('contain', 'QUIZ ME!')
   })
 
 })
