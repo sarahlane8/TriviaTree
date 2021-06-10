@@ -15,14 +15,7 @@ class QuestionCard extends Component {
   handleClick = () => {
     const { deleteQuestion, saveQuestion, id,  } = this.props
     this.props.isFavorited ? deleteQuestion(id) : saveQuestion(id)
-    // this.changeFavoritedStatus()
   }
-
-  // changeFavoritedStatus = () => {
-  //   this.setState({
-  //     isFavorited: !this.state.isFavorited
-  //   })
-  // }
 
   createMarkUpData = (data) => {
     let clean = DOMPurify.sanitize( data );
