@@ -8,12 +8,27 @@ export const getQuestions = async () => {
     const filteredQuestions = filterQuestionsData(checkedResponse)
     return filteredQuestions
   } catch (err) {
-    console.log(err)
+    throw Error(err.message)
   }
 }
+
 
 const checkResponse = response => {
   if (response.ok) {
     return response.json()
   }
+  handleError(response.status)
+}
+
+
+const handleError = (status) => {
+  if (status === 404) {
+    throw Error('Sorry, page not found!')
+  }
+
+  if (status === 500) {
+    throw Error('Sorry, this page isn\'t working!')
+  }
+
+  throw Error('Sorry, something went wrong!')
 }

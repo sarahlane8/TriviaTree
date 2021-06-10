@@ -11,16 +11,17 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      questions: []
+      questions: [],
+      error: ''
     }
   }
 
   fetchQuestions = async () => {
     try {
       const response = await getQuestions()
-      this.setState({questions: response}, () => console.log(this.state.questions))
+      this.setState({ questions: response })
     } catch (err) {
-      console.log(err)
+      this.setState({ error: err })
     }
   }
 
