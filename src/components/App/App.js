@@ -26,10 +26,15 @@ class App extends Component {
     }
   }
 
+  findQuestion = id => {
+    const question = this.state.questions.find(question => question.id === id)
+    this.saveQuestion(question)
+  }
+
   saveQuestion = question => {
    const newQuestionToSave = this.state.savedQuestions.find(savedQuestion => question.id === savedQuestion.id)
    if (!newQuestionToSave) {
-     this.setState( {savedQuestions: [...this.state.savedQuestions, question]})
+     this.setState( {savedQuestions: [...this.state.savedQuestions, question]}, () => console.log(this.state.savedQuestions))
    }
   }
 
@@ -57,6 +62,7 @@ class App extends Component {
                 <Questions
                   questions={this.state.questions}
                   saveQuestion={this.saveQuestion}
+                  findQuestion={this.findQuestion}
                 />
               )
             }}

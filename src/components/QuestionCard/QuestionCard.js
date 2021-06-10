@@ -13,6 +13,13 @@ class QuestionCard extends Component {
     }
   }
 
+  handleClick = () => {
+    // console.log(17, this.props.id)
+
+    this.changeFavoritedStatus()
+    this.props.findQuestion(this.props.id)
+  }
+
   changeFavoritedStatus = () => {
     this.setState({
       isFavorited: !this.state.isFavorited
@@ -28,7 +35,7 @@ class QuestionCard extends Component {
     const whichStar = this.state.isFavorited ? "⭐️ Saved! ⭐️" : "Save Question"
     return(
       <div className='flip-card' >
-        <button onClick={ () => this.changeFavoritedStatus() }>{whichStar}</button>
+        <button onClick={ () => this.handleClick() }>{whichStar}</button>
         <div className='flip-card-inner'>
           <article className='question-card'>
             <p dangerouslySetInnerHTML={this.createMarkUpData(this.props.question) } />
