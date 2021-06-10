@@ -78,12 +78,16 @@ class App extends Component {
           <Route
             exact path='/savedQuestions'
             render={ () => {
+
               return(
-                <Questions
-                  questions={this.state.savedQuestions}
-                  saveQuestion={this.saveQuestion}
-                  deleteQuestion={this.deleteQuestion}
-                />
+                <div>
+                  {!this.state.savedQuestions.length && <h2>You don't have any saved questions yet!</h2>}
+                  <Questions
+                    questions={this.state.savedQuestions}
+                    saveQuestion={this.saveQuestion}
+                    deleteQuestion={this.deleteQuestion}
+                  />
+                </div>
               )
             }}
           />
