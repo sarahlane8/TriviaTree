@@ -7,12 +7,12 @@
   color: #D6EDFF
 }
 
-.questions-form > button {
+.questions-form > a > button {
   padding: 40px 60px;
   font-size: 35px;
 }
 
-.questions-form > button:hover {
+.questions-form > a > button:hover {
   background-color: #478978;
   color: #D6EDFF;
 }
