@@ -8,21 +8,21 @@ class QuestionCard extends Component {
   constructor() {
     super()
     this.state = {
-      isFavorited: false
+      // isFavorited: false
     }
   }
 
   handleClick = () => {
-    const { deleteQuestion, saveQuestion, id } = this.props
-    this.state.isFavorited ? deleteQuestion(id) : saveQuestion(id)
-    this.changeFavoritedStatus()
+    const { deleteQuestion, saveQuestion, id,  } = this.props
+    this.props.isFavorited ? deleteQuestion(id) : saveQuestion(id)
+    // this.changeFavoritedStatus()
   }
 
-  changeFavoritedStatus = () => {
-    this.setState({
-      isFavorited: !this.state.isFavorited
-    })
-  }
+  // changeFavoritedStatus = () => {
+  //   this.setState({
+  //     isFavorited: !this.state.isFavorited
+  //   })
+  // }
 
   createMarkUpData = (data) => {
     let clean = DOMPurify.sanitize( data );
@@ -30,7 +30,7 @@ class QuestionCard extends Component {
   }
 
   render() {
-    const whichStar = this.state.isFavorited ? "⭐️ Saved! ⭐️" : "Save Question"
+    const whichStar = this.props.isFavorited ? "⭐️ Saved! ⭐️" : "Save Question"
     return(
       <div className='flip-card' >
         <button onClick={ () => this.handleClick() }>{whichStar}</button>
