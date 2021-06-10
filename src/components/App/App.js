@@ -26,6 +26,9 @@ class App extends Component {
     }
   }
 
+  saveQuestion = question => {
+    
+  }
 
 
   render() {
@@ -49,7 +52,10 @@ class App extends Component {
             exact path ='/questions'
             render={ () => {
               return(
-                <Questions questions={this.state.questions} />
+                <Questions
+                  questions={this.state.questions}
+                  saveQuestion={this.saveQuestion}
+                />
               )
             }}
           />
