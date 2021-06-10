@@ -35,15 +35,15 @@ class App extends Component {
     const question = this.findQuestion(id)
     const newQuestionToSave = this.state.savedQuestions.find(savedQuestion => question.id === savedQuestion.id)
     if (!newQuestionToSave) {
-     this.setState( {savedQuestions: [...this.state.savedQuestions, question]}, () => console.log('save', this.state.savedQuestions))
+     this.setState( {savedQuestions: [...this.state.savedQuestions, question]} )
     }
   }
 
   deleteQuestion = id => {
-    // const question = this.findQuestion(id)
     const filteredSavedQuestions = this.state.savedQuestions.filter(question => question.id !== id)
-    this.setState( {savedQuestions: filteredSavedQuestions}, () => console.log('delete', this.state.savedQuestions))
+    this.setState( {savedQuestions: filteredSavedQuestions} )
   }
+
 
   render() {
 
