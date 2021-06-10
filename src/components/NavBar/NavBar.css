@@ -12,7 +12,8 @@
   font-size: 75px;
 }
 
-.nav-links > li {
+
+.nav-links {
   display: flex;
   justify-content: space-around;
 }
@@ -33,7 +34,9 @@ li:hover {
   background-color: #DE5476;
   color: #D6EDFF;
   cursor: pointer;
+  list-style-type: none;
 }
+
 
 a {
   color: inherit;
