@@ -12,6 +12,7 @@ class App extends Component {
     super()
     this.state = {
       questions: [],
+      savedQuestions: [],
       error: ''
     }
   }
