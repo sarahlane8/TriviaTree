@@ -14,6 +14,7 @@ const Questions = ({ questions, saveQuestion, deleteQuestion }) => {
         answer={question.answer}
         saveQuestion={saveQuestion}
         deleteQuestion={deleteQuestion}
+        isFavorited={question.isFavorited}
       />
     )
   })

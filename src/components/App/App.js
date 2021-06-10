@@ -28,7 +28,10 @@ class App extends Component {
 
   findQuestion = id => {
     const question = this.state.questions.find(question => question.id === id)
-    return question
+    if (question) {
+      question.isFavorited = !question.isFavorited
+      return question
+    }
   }
 
   saveQuestion = id => {
@@ -40,13 +43,12 @@ class App extends Component {
   }
 
   deleteQuestion = id => {
+    this.findQuestion(id)
     const filteredSavedQuestions = this.state.savedQuestions.filter(question => question.id !== id)
     this.setState( {savedQuestions: filteredSavedQuestions} )
   }
 
-
   render() {
-
     return (
       <main className="App">
         <NavBar />

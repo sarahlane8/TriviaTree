@@ -3,7 +3,8 @@ export const filterQuestionsData = (rawData) => {
     return {
       id: Date.now()+index,
       question: question.question,
-      answer: question.correct_answer
+      answer: question.correct_answer,
+      isFavorited: false
     }
   })
   return filteredQuestions

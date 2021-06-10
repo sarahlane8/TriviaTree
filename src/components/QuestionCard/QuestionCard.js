@@ -1,50 +1,34 @@
 import './QuestionCard.css'
-import { Component } from 'react'
 import DOMPurify from 'dompurify'
 import PropTypes from 'prop-types'
 
 
-class QuestionCard extends Component {
-  constructor() {
-    super()
-    this.state = {
-      isFavorited: false
-    }
+const QuestionCard = ({ deleteQuestion, saveQuestion, id, isFavorited, question, answer  }) => {
+
+  const handleClick = () => {
+    isFavorited ? deleteQuestion(id) : saveQuestion(id)
   }
 
-  handleClick = () => {
-    const { deleteQuestion, saveQuestion, id } = this.props
-    this.state.isFavorited ? deleteQuestion(id) : saveQuestion(id)
-    this.changeFavoritedStatus()
-  }
-
-  changeFavoritedStatus = () => {
-    this.setState({
-      isFavorited: !this.state.isFavorited
-    })
-  }
-
-  createMarkUpData = (data) => {
+  const createMarkUpData = (data) => {
     let clean = DOMPurify.sanitize( data );
     return {__html: clean }
   }
 
-  render() {
-    const whichStar = this.state.isFavorited ? "⭐️ Saved! ⭐️" : "Save Question"
+  const whichStar = isFavorited ? "⭐️ Saved! ⭐️" : "Save Question"
     return(
       <div className='flip-card' >
-        <button onClick={ () => this.handleClick() }>{whichStar}</button>
+        <button onClick={ () => handleClick() }>{whichStar}</button>
         <div className='flip-card-inner'>
           <article className='question-card'>
-            <p dangerouslySetInnerHTML={this.createMarkUpData(this.props.question) } />
+            <p dangerouslySetInnerHTML={createMarkUpData(question) } />
           </article>
           <article className='answer' >
-            <p dangerouslySetInnerHTML={this.createMarkUpData(this.props.answer) } />
+            <p dangerouslySetInnerHTML={createMarkUpData(answer) } />
           </article>
         </div>
       </div>
     )
-  }
+
 }
 
 QuestionCard.propTypes = {
@@ -52,7 +36,8 @@ QuestionCard.propTypes = {
   question: PropTypes.string,
   answer: PropTypes.string,
   saveQuestion: PropTypes.func,
-  deleteQuestion: PropTypes.func
+  deleteQuestion: PropTypes.func,
+  isFavorited: PropTypes.bool
 }
 
 export default QuestionCard
