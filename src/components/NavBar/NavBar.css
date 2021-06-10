@@ -3,7 +3,8 @@
   justify-content: space-around;
   align-items: center;
   background-color: #478978;
-  color: #D6EDFF
+  color: #D6EDFF;
+  position: sticky;
 }
 
 
@@ -12,7 +13,13 @@
 }
 
 
-button {
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+li {
   margin: 15px;
   border-radius: 10px;
   background-color: #D6EDFF;
@@ -23,7 +30,15 @@ button {
 }
 
 
-button:hover {
+li:hover {
   background-color: #DE5476;
   color: #D6EDFF;
+  cursor: pointer;
+  list-style-type: none;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
