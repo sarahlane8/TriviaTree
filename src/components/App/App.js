@@ -48,9 +48,7 @@ class App extends Component {
     this.setState( {savedQuestions: filteredSavedQuestions} )
   }
 
-
   render() {
-
     return (
       <main className="App">
         <NavBar />
