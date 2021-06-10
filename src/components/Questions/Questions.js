@@ -1,29 +1,19 @@
 import './Questions.css'
 import QuestionCard from '../QuestionCard/QuestionCard'
 import PropTypes from 'prop-types';
-import { Component } from 'react'
 
 
-// const Questions = ({ questions, saveQuestion }) => {
-  class Questions extends Component {
-    constructor() {
-      super()
-      this.state = {
-        questions: []
-      }
-    }
+const Questions = ({ questions, saveQuestion, deleteQuestion }) => {
 
-
-render() {
   const questionCards = this.props.questions.map((question, index) => {
     return(
       <QuestionCard
-      key={question.id}
-      id={question.id}
-      question={question.question}
-      answer={question.answer}
-      saveQuestion={this.props.saveQuestion}
-      deleteQuestion={this.props.deleteQuestion}
+        key={question.id}
+        id={question.id}
+        question={question.question}
+        answer={question.answer}
+        saveQuestion={this.props.saveQuestion}
+        deleteQuestion={this.props.deleteQuestion}
       />
     )
   })
@@ -34,11 +24,11 @@ render() {
     </section>
   )
 }
-}
 
-// Questions.propTypes = {
-//   questions: PropTypes.array,
-//   saveQuestion: PropTypes.func,
-// }
+Questions.propTypes = {
+  questions: PropTypes.array,
+  saveQuestion: PropTypes.func,
+  deleteQuestion: PropTypes.func
+}
 
 export default Questions
