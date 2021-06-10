@@ -1,5 +1,4 @@
 import './QuestionCard.css'
-import { Component } from 'react'
 import DOMPurify from 'dompurify'
 import PropTypes from 'prop-types'
 
