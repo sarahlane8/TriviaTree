@@ -3,7 +3,8 @@
   justify-content: space-around;
   align-items: center;
   background-color: #478978;
-  color: #D6EDFF
+  color: #D6EDFF;
+  position: sticky;
 }
 
 
@@ -11,8 +12,13 @@
   font-size: 75px;
 }
 
+.nav-links > li {
+  display: flex;
+  justify-content: space-around;
+}
 
-button {
+
+li {
   margin: 15px;
   border-radius: 10px;
   background-color: #D6EDFF;
@@ -23,7 +29,13 @@ button {
 }
 
 
-button:hover {
+li:hover {
   background-color: #DE5476;
   color: #D6EDFF;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
