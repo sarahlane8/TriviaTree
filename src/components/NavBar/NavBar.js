@@ -29,7 +29,6 @@ const NavBar = () => {
             Saved Questions
           </NavLink>
         </li>
-
       </ul>
     </nav>
   )
