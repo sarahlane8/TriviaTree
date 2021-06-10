@@ -69,7 +69,6 @@ class App extends Component {
                 <Questions
                   questions={this.state.questions}
                   saveQuestion={this.saveQuestion}
-                  findQuestion={this.findQuestion}
                   deleteQuestion={this.deleteQuestion}
                 />
               )
