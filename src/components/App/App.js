@@ -1,5 +1,5 @@
 import './App.css';
-import React, { Component } from "react"
+import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
 import NavBar from '../NavBar/NavBar'
 import Form from '../Form/Form'
@@ -50,7 +50,7 @@ class App extends Component {
 
   render() {
     return (
-      <main className="App">
+      <main className='App'>
         <NavBar />
 
         <Switch>
@@ -80,7 +80,6 @@ class App extends Component {
           <Route
             exact path='/savedQuestions'
             render={ () => {
-
               return(
                 <div className='questions-grid-error'>
                   {!this.state.savedQuestions.length && <h2>You don't have any saved questions yet!</h2>}

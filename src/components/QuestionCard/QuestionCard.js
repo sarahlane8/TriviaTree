@@ -3,7 +3,7 @@ import DOMPurify from 'dompurify'
 import PropTypes from 'prop-types'
 
 
-const QuestionCard = ({ deleteQuestion, saveQuestion, id, isFavorited, question, answer  }) => {
+const QuestionCard = ({ deleteQuestion, saveQuestion, id, isFavorited, question, answer }) => {
 
   const handleClick = () => {
     isFavorited ? deleteQuestion(id) : saveQuestion(id)
@@ -14,21 +14,21 @@ const QuestionCard = ({ deleteQuestion, saveQuestion, id, isFavorited, question,
     return {__html: clean }
   }
 
-  const whichStar = isFavorited ? "⭐️ Saved! ⭐️" : "Save Question"
-    return(
-      <div className='flip-card' >
-        <button onClick={ () => handleClick() }>{whichStar}</button>
-        <div className='flip-card-inner'>
-          <article className='question-card'>
-            <p dangerouslySetInnerHTML={createMarkUpData(question) } />
-          </article>
-          <article className='answer' >
-            <p dangerouslySetInnerHTML={createMarkUpData(answer) } />
-          </article>
-        </div>
-      </div>
-    )
+  const whichStar = isFavorited ? '⭐️ Saved! ⭐️' : 'Save Question'
 
+  return(
+    <div className='flip-card' >
+      <button onClick={ () => handleClick() }>{whichStar}</button>
+      <div className='flip-card-inner'>
+        <article className='question-card'>
+          <p dangerouslySetInnerHTML={createMarkUpData(question) } />
+        </article>
+        <article className='answer' >
+          <p dangerouslySetInnerHTML={createMarkUpData(answer) } />
+        </article>
+      </div>
+    </div>
+  )
 }
 
 QuestionCard.propTypes = {
