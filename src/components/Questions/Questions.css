@@ -8,17 +8,20 @@
   align-items: center;
 }
 
+
 @media only screen and (max-width: 1385px) {
   .questions-grid {
     grid-template-columns: repeat(3, 300px);
   }
 }
 
+
 @media only screen and (max-width: 1000px) {
   .questions-grid {
     grid-template-columns: repeat(2, 300px);
   }
 }
+
 
 @media only screen and (max-width: 700px) {
   .questions-grid {
