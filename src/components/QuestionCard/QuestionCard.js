@@ -4,7 +4,6 @@ import DOMPurify from 'dompurify'
 import PropTypes from 'prop-types'
 
 
-
 class QuestionCard extends Component {
   constructor() {
     super()
@@ -14,12 +13,8 @@ class QuestionCard extends Component {
   }
 
   handleClick = () => {
-    console.log(this.props.id, this.state.isFavorited)
-    if (this.state.isFavorited) {
-      this.props.deleteQuestion(this.props.id)
-    } else {
-      this.props.saveQuestion(this.props.id)
-    }
+    const { deleteQuestion, saveQuestion, id } = this.props
+    this.state.isFavorited ? deleteQuestion(id) : saveQuestion(id)
     this.changeFavoritedStatus()
   }
 
@@ -57,7 +52,9 @@ class QuestionCard extends Component {
 QuestionCard.propTypes = {
   id: PropTypes.number,
   question: PropTypes.string,
-  answer: PropTypes.string
+  answer: PropTypes.string,
+  saveQuestion: PropTypes.func,
+  deleteQuestion: PropTypes.func
 }
 
 export default QuestionCard

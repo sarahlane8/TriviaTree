@@ -5,15 +5,15 @@ import PropTypes from 'prop-types';
 
 const Questions = ({ questions, saveQuestion, deleteQuestion }) => {
 
-  const questionCards = this.props.questions.map((question, index) => {
+  const questionCards = questions.map((question, index) => {
     return(
       <QuestionCard
         key={question.id}
         id={question.id}
         question={question.question}
         answer={question.answer}
-        saveQuestion={this.props.saveQuestion}
-        deleteQuestion={this.props.deleteQuestion}
+        saveQuestion={saveQuestion}
+        deleteQuestion={deleteQuestion}
       />
     )
   })
