@@ -42,3 +42,25 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+
+@media only screen and (max-width: 1050px) {
+  .nav-links {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+
+@media only screen and (max-width: 870px) {
+  .nav-bar {
+    flex-direction: column;
+  }
+  .nav-bar > h1 {
+    margin: 0;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+}
