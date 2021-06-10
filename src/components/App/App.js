@@ -63,11 +63,24 @@ class App extends Component {
           />
 
           <Route
-            exact path ='/questions'
+            exact path='/questions'
             render={ () => {
               return(
                 <Questions
                   questions={this.state.questions}
+                  saveQuestion={this.saveQuestion}
+                  deleteQuestion={this.deleteQuestion}
+                />
+              )
+            }}
+          />
+
+          <Route
+            exact path='/savedQuestions'
+            render={ () => {
+              return(
+                <Questions
+                  questions={this.state.savedQuestions}
                   saveQuestion={this.saveQuestion}
                   deleteQuestion={this.deleteQuestion}
                 />
