@@ -47,8 +47,6 @@ class QuestionCard extends Component {
   }
 }
 
-
-
 QuestionCard.propTypes = {
   id: PropTypes.number,
   question: PropTypes.string,
