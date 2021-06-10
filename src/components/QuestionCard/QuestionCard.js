@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 
 const QuestionCard = ({ deleteQuestion, saveQuestion, id, isFavorited, question, answer  }) => {
 
-
   const handleClick = () => {
     isFavorited ? deleteQuestion(id) : saveQuestion(id)
   }
@@ -37,7 +36,8 @@ QuestionCard.propTypes = {
   question: PropTypes.string,
   answer: PropTypes.string,
   saveQuestion: PropTypes.func,
-  deleteQuestion: PropTypes.func
+  deleteQuestion: PropTypes.func,
+  isFavorited: PropTypes.bool
 }
 
 export default QuestionCard
