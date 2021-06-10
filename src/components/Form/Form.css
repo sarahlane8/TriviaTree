@@ -2,15 +2,23 @@
   padding-top: 50px;
 }
 
+
 .questions-form > h2 {
   font-size: 50px;
   color: #D6EDFF
 }
 
+
 .questions-form > a > button {
   padding: 40px 60px;
   font-size: 35px;
+  margin: 15px;
+  border-radius: 10px;
+  background-color: #D6EDFF;
+  color: #478978;
+  font-weight: bolder;
 }
+
 
 .questions-form > a > button:hover {
   background-color: #478978;
