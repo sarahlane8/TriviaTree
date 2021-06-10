@@ -17,7 +17,15 @@ describe('SavedQuestionsDisplay', () => {
       .get('.questions-grid').should('be.visible')
       .get('.flip-card').should('have.length', 2)
 
-      .get('.flip-card > button').eq(0).click()
+
+  })
+
+  it('Should remove a question when I click on the button from the saved questions display', () => {
+    cy.get('.flip-card > button').eq(0).click()
+      .get('.flip-card > button').eq(1).click()
+      .get('.nav-links > li > a').eq(1).click()
+
+    cy.get('.flip-card > button').eq(0).click()
       .get('.flip-card').should('have.length', 1)
   })
 })
