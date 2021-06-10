@@ -27,6 +27,9 @@ describe('SavedQuestionsDisplay', () => {
 
     cy.get('.flip-card > button').eq(0).click()
       .get('.flip-card').should('have.length', 1)
+      .get('.flip-card > button').eq(0).click()
+      .get('h2').should('be.visible').should('contain', 'You don\'t have any saved questions yet!')
+
   })
 
   it('Should tell the user if they don\'t have any saved questions yet', () => {
