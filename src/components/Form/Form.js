@@ -5,9 +5,9 @@ import PropTypes from 'prop-types'
 
 const Form = ({ getQuestions }) => {
   return (
-    <div className="questions-form">
+    <div className='questions-form'>
       <h2>Click the button for questions!</h2>
-      <Link to="/questions">
+      <Link to='/questions'>
         <button onClick={ () => getQuestions() }>QUIZ ME!</button>
       </Link>
     </div>

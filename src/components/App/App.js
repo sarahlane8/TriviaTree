@@ -1,5 +1,5 @@
 import './App.css';
-import React, { Component } from "react"
+import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
 import NavBar from '../NavBar/NavBar'
 import Form from '../Form/Form'
@@ -50,7 +50,7 @@ class App extends Component {
 
   render() {
     return (
-      <main className="App">
+      <main className='App'>
         <NavBar />
 
         <Switch>

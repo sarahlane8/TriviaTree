@@ -14,7 +14,7 @@ const QuestionCard = ({ deleteQuestion, saveQuestion, id, isFavorited, question,
     return {__html: clean }
   }
 
-  const whichStar = isFavorited ? "⭐️ Saved! ⭐️" : "Save Question"
+  const whichStar = isFavorited ? '⭐️ Saved! ⭐️' : 'Save Question'
 
   return(
     <div className='flip-card' >
