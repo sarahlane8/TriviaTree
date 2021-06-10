@@ -80,7 +80,6 @@ class App extends Component {
           <Route
             exact path='/savedQuestions'
             render={ () => {
-
               return(
                 <div className='questions-grid-error'>
                   {!this.state.savedQuestions.length && <h2>You don't have any saved questions yet!</h2>}
