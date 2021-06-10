@@ -22,8 +22,8 @@ render() {
       id={question.id}
       question={question.question}
       answer={question.answer}
-      findQuestion={this.props.findQuestion}
       saveQuestion={this.props.saveQuestion}
+      deleteQuestion={this.props.deleteQuestion}
       />
     )
   })

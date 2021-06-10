@@ -28,14 +28,21 @@ class App extends Component {
 
   findQuestion = id => {
     const question = this.state.questions.find(question => question.id === id)
-    this.saveQuestion(question)
+    return question
   }
 
-  saveQuestion = question => {
-   const newQuestionToSave = this.state.savedQuestions.find(savedQuestion => question.id === savedQuestion.id)
-   if (!newQuestionToSave) {
-     this.setState( {savedQuestions: [...this.state.savedQuestions, question]}, () => console.log(this.state.savedQuestions))
-   }
+  saveQuestion = id => {
+    const question = this.findQuestion(id)
+    const newQuestionToSave = this.state.savedQuestions.find(savedQuestion => question.id === savedQuestion.id)
+    if (!newQuestionToSave) {
+     this.setState( {savedQuestions: [...this.state.savedQuestions, question]}, () => console.log('save', this.state.savedQuestions))
+    }
+  }
+
+  deleteQuestion = id => {
+    // const question = this.findQuestion(id)
+    const filteredSavedQuestions = this.state.savedQuestions.filter(question => question.id !== id)
+    this.setState( {savedQuestions: filteredSavedQuestions}, () => console.log('delete', this.state.savedQuestions))
   }
 
   render() {
@@ -63,6 +70,7 @@ class App extends Component {
                   questions={this.state.questions}
                   saveQuestion={this.saveQuestion}
                   findQuestion={this.findQuestion}
+                  deleteQuestion={this.deleteQuestion}
                 />
               )
             }}

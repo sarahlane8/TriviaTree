@@ -6,18 +6,21 @@ import PropTypes from 'prop-types'
 
 
 class QuestionCard extends Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
       isFavorited: false
     }
   }
 
   handleClick = () => {
-    // console.log(17, this.props.id)
-
+    console.log(this.props.id, this.state.isFavorited)
+    if (this.state.isFavorited) {
+      this.props.deleteQuestion(this.props.id)
+    } else {
+      this.props.saveQuestion(this.props.id)
+    }
     this.changeFavoritedStatus()
-    this.props.findQuestion(this.props.id)
   }
 
   changeFavoritedStatus = () => {
