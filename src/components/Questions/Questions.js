@@ -3,14 +3,17 @@ import QuestionCard from '../QuestionCard/QuestionCard'
 import PropTypes from 'prop-types';
 
 
-const Questions = ({ questions }) => {
+const Questions = ({ questions, saveQuestion, deleteQuestion }) => {
+
   const questionCards = questions.map((question, index) => {
     return(
       <QuestionCard
-        key={Date.now()+index}
-        id={Date.now()+index}
+        key={question.id}
+        id={question.id}
         question={question.question}
         answer={question.answer}
+        saveQuestion={saveQuestion}
+        deleteQuestion={deleteQuestion}
       />
     )
   })
@@ -23,7 +26,9 @@ const Questions = ({ questions }) => {
 }
 
 Questions.propTypes = {
-  questions: PropTypes.array
+  questions: PropTypes.array,
+  saveQuestion: PropTypes.func,
+  deleteQuestion: PropTypes.func
 }
 
 export default Questions

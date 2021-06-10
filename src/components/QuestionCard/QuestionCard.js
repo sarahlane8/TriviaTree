@@ -4,13 +4,18 @@ import DOMPurify from 'dompurify'
 import PropTypes from 'prop-types'
 
 
-
 class QuestionCard extends Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
       isFavorited: false
     }
+  }
+
+  handleClick = () => {
+    const { deleteQuestion, saveQuestion, id } = this.props
+    this.state.isFavorited ? deleteQuestion(id) : saveQuestion(id)
+    this.changeFavoritedStatus()
   }
 
   changeFavoritedStatus = () => {
@@ -28,7 +33,7 @@ class QuestionCard extends Component {
     const whichStar = this.state.isFavorited ? "⭐️ Saved! ⭐️" : "Save Question"
     return(
       <div className='flip-card' >
-        <button onClick={ () => this.changeFavoritedStatus() }>{whichStar}</button>
+        <button onClick={ () => this.handleClick() }>{whichStar}</button>
         <div className='flip-card-inner'>
           <article className='question-card'>
             <p dangerouslySetInnerHTML={this.createMarkUpData(this.props.question) } />
@@ -42,12 +47,12 @@ class QuestionCard extends Component {
   }
 }
 
-
-
 QuestionCard.propTypes = {
   id: PropTypes.number,
   question: PropTypes.string,
-  answer: PropTypes.string
+  answer: PropTypes.string,
+  saveQuestion: PropTypes.func,
+  deleteQuestion: PropTypes.func
 }
 
 export default QuestionCard

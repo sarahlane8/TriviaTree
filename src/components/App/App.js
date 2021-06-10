@@ -12,6 +12,7 @@ class App extends Component {
     super()
     this.state = {
       questions: [],
+      savedQuestions: [],
       error: ''
     }
   }
@@ -25,6 +26,23 @@ class App extends Component {
     }
   }
 
+  findQuestion = id => {
+    const question = this.state.questions.find(question => question.id === id)
+    return question
+  }
+
+  saveQuestion = id => {
+    const question = this.findQuestion(id)
+    const newQuestionToSave = this.state.savedQuestions.find(savedQuestion => question.id === savedQuestion.id)
+    if (!newQuestionToSave) {
+     this.setState( {savedQuestions: [...this.state.savedQuestions, question]} )
+    }
+  }
+
+  deleteQuestion = id => {
+    const filteredSavedQuestions = this.state.savedQuestions.filter(question => question.id !== id)
+    this.setState( {savedQuestions: filteredSavedQuestions} )
+  }
 
 
   render() {
@@ -45,10 +63,27 @@ class App extends Component {
           />
 
           <Route
-            exact path ='/questions'
+            exact path='/questions'
             render={ () => {
               return(
-                <Questions questions={this.state.questions} />
+                <Questions
+                  questions={this.state.questions}
+                  saveQuestion={this.saveQuestion}
+                  deleteQuestion={this.deleteQuestion}
+                />
+              )
+            }}
+          />
+
+          <Route
+            exact path='/savedQuestions'
+            render={ () => {
+              return(
+                <Questions
+                  questions={this.state.savedQuestions}
+                  saveQuestion={this.saveQuestion}
+                  deleteQuestion={this.deleteQuestion}
+                />
               )
             }}
           />
