@@ -9,8 +9,8 @@ export const filterQuestionsData = (rawData) => {
   })
   return filteredQuestions
 }
+
 export const findCategoryNumber = (category) => {
-  console.log('category', category)
   let catNum;
   if (category === 'general knowledge') {
     catNum = 9
@@ -33,7 +33,5 @@ export const findCategoryNumber = (category) => {
   if (category === 'history') {
     catNum = 23
   }
-  console.log('catNum', catNum)
   return catNum;
-
 }
