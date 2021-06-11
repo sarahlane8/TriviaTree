@@ -2,7 +2,6 @@ import { filterQuestionsData, findCategoryNumber } from './cleaningFunctions'
 
 
 export const getQuestions = async (category) => {
-  console.log('getQuestions', category)
   const catNum = findCategoryNumber(category)
   try {
     const response = await fetch(`https://opentdb.com/api.php?amount=10&category=${catNum}&difficulty=easy`)
@@ -14,14 +13,12 @@ export const getQuestions = async (category) => {
   }
 }
 
-
 const checkResponse = response => {
   if (response.ok) {
     return response.json()
   }
   handleError(response.status)
 }
-
 
 const handleError = (status) => {
   if (status === 404) {
