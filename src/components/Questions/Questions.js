@@ -19,6 +19,12 @@ const Questions = ({ questions, saveQuestion, deleteQuestion }) => {
     )
   })
 
+  if (!questions.length) {
+    return(
+      <h2 className='error-msg'>Sorry, we can't find your questions!</h2>
+    )
+  }
+  
   return(
     <section className='questions-grid'>
       {questionCards}
