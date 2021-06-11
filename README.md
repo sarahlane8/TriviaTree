@@ -20,7 +20,7 @@ For this project, I targeted a niche audience and created a useful, purposeful a
 
 <img width="250" alt="lighthouse accessibility score" src="https://user-images.githubusercontent.com/70901622/121623347-c2c51600-ca2c-11eb-8143-a1d23dd6b323.png">
 
-- Deployed [LINK](//)
+- [Deployed Application](https://trivia-tree.herokuapp.com/)
 - [Project Spec](https://frontend.turing.edu/projects/module-3/niche-audience.html)
 - [User Persona](https://docs.google.com/document/d/1P5sTtujMO2NMPCnaeIbICrfeQQFhVdl0Po_0-8tIWG0/edit?usp=sharing)
 - [User Persona](https://docs.google.com/document/d/1-4nDxuX5lRJHXh-PK_dbw6nK-B80jVT-ADEygnu1qyY/edit?usp=sharing)
