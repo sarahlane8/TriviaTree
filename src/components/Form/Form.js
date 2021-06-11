@@ -20,10 +20,10 @@ class Form extends Component {
     const { getQuestions } = this.props
     return (
       <div className='questions-form'>
-  
+
 
         <label>
-        Choose your category:
+        Choose a category:
           <select
             className='selections'
             value={this.state.category}
