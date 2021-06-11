@@ -1,5 +1,5 @@
 .questions-form {
-  padding-top: 50px;
+  padding: 50px;
   font-size: 50px;
   color: #D6EDFF;
   display: flex;
@@ -9,6 +9,7 @@
 
 
 .questions-form > a > button {
+  /* width: 250px; */
   padding: 30px 50px;
   font-size: 35px;
   margin: 15px;
@@ -31,6 +32,12 @@
   padding: 15px;
   margin-left: 10px;
   border-radius: 10px;
+}
+
+
+label {
+  padding: 100px;
+  text-align-last: center;
 }
 
 

@@ -20,7 +20,7 @@ class Form extends Component {
     const { getQuestions } = this.props
     return (
       <div className='questions-form'>
-      <h2>Click the button for questions!</h2>
+  
 
         <label>
         Choose your category:
