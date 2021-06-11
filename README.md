@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+# Trivia Tree
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Table of Contents
+- [Trivia Tree](#trivia-tree)
+  - [Overview](#overview)
+  - [Learning Goals](#learning-goals)
+  - [Features](#features)
+  - [Technologies Used](#technologies-used)
+  - [Setup Instructions](#setup-instructions)
+  - [Project Reflection](#project-reflection-and-individual-learning-goals)
+  - [Future Iterations](#future-iterations)
+  - [Credits](#credits)
+      - [Authors](#authors)
+      - [Project Managers](#project-managers)
 
-## Available Scripts
+## Overview
+For this project, I targeted a niche audience and created a useful, purposeful application for them.  Through the pandemic, students had to learn remotely and their caregivers often had to juggle working from home full time and supporting the students in their learning.  I created an app that families could use at the dinner table to test their knowledge, learn new information, and have fun together!
 
-In the project directory, you can run:
+<img width="250" height="400" alt="Wave audit tool score" src="https://user-images.githubusercontent.com/70901622/121623349-c3f64300-ca2c-11eb-8d6d-13bed214c938.png">
 
-### `npm start`
+<img width="250" alt="lighthouse accessibility score" src="https://user-images.githubusercontent.com/70901622/121623347-c2c51600-ca2c-11eb-8143-a1d23dd6b323.png">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Deployed [LINK](//)
+- [Project Spec](https://frontend.turing.edu/projects/module-3/niche-audience.html)
+- [User Persona](https://docs.google.com/document/d/1P5sTtujMO2NMPCnaeIbICrfeQQFhVdl0Po_0-8tIWG0/edit?usp=sharing)
+- [User Persona](https://docs.google.com/document/d/1-4nDxuX5lRJHXh-PK_dbw6nK-B80jVT-ADEygnu1qyY/edit?usp=sharing)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Learning Goals
+- Demonstrate mastery with React, React Router, asynchronous JavaScript, and end to end testing with Cypress
+- Create User Personas to target my niche audience
+- Work within time constraints to deliver a product for my niche audience
 
-### `npm test`
+## Features
+Users can view a question cards, and can click and hold the card to view the answer.
+![Demo of Viewing Cards and Answers](https://media.giphy.com/media/3PShOFitz8sF4oCAdY/giphy.gif)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Users can save a question card for review later.  By clicking the same button, the card is no longer saved.
+![Demo of saving cards for later](https://media.giphy.com/media/JxNWj973DhMNUkM1XP/giphy.gif)
 
-### `npm run build`
+Users can view all their saved cards together, and can also un-save cards from that view.
+![Demo of saved cards view](https://media.giphy.com/media/Rpnx5Vp83IVksPv8rC/giphy.gif)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technologies Used
+* ![React](https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* ![React-Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 
-### `npm run eject`
+* ![CSS](https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* ![Cypress](https://img.shields.io/badge/cypress-04C38E.svg?&style=for-the-badge&logo=cypress&logoColor=white)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Setup Instructions
+#### For viewing the application:
+1. Open your terminal and access the directory you want to place this project in
+2. Run `$git clone git@github.com:sarahlane8/TriviaTree.git` to clone the repo
+3. `cd` into the root directory of the project
+4. Run `$npm i` to install dependencies
+5. Run `$npm start` to start the web server
+6. If a browser window does not automatically open, open your web browser and navigate to `http://localhost:3000` to access the application
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### For testing the application:
+After completing the steps above to clone the repo:  
+1. Run `$npx cypress open` to open the Cypress testing GUI
+2. Click on an integration test and allow the test to run
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Reflection
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- This project was an opportunity for me to demonstrate my mastery of React and Cypress, while highlighting my problem solving skills and ability to produce DRY code. I am proud of this work and my growth as a developer!
 
-### Code Splitting
+## Future Iterations
+- Users will be able to filter questions by difficulty level
+- Users will be able to filter questions by true/false or multiple choice questions
+- Users will be able to add comments to the question cards for their review
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Credits
+#### Authors
+<table>
+  <tr>
+    <td> Sarah Lane <a href="https://github.com/sarahlane8">GH</td>
+  </tr>
+  <td>
+    <img width="150" height="auto" src="https://user-images.githubusercontent.com/70901622/120944450-cafe1800-c6f1-11eb-96f2-5e18fdb2a96e.png" alt="Sarah's GH img">
+  </td>
+</table>
 
-### Analyzing the Bundle Size
+#### Project Managers
+<table>
+  <tr>
+    <td> Leta Keane <a href="https://github.com/letakeane">GH</td>
+    <td> Scott Ertmer <a href="https://github.com/sertmer">GH</td>
+  </tr>
+  <td>
+    <img src="https://avatars.githubusercontent.com/u/22563791?v=4" alt="Leta's GH img"
+ width="150" height="auto" />
+ </td>
+  <td>
+    <img src="https://avatars.githubusercontent.com/u/49926352?v=4" alt="Scott's GH img"
+ width="150" height="auto" />
+ </td>
+</table>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**************************************************************************
+This project was created for [Turing School of Software and Design](https://turing.io/)
+##### 06/14/2021
+**[Back to top](#table-of-contents)**
