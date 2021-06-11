@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 
 const Questions = ({ questions, saveQuestion, deleteQuestion }) => {
-  console.log(questions)
 
   const questionCards = questions.map((question, index) => {
     return(
