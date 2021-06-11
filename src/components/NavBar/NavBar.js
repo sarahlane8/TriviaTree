@@ -24,6 +24,13 @@ const NavBar = () => {
         </li>
         <li>
           <NavLink
+            exact to='/questions'
+            activeStyle={activeStyling}>
+            Questions
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
             exact to='/savedQuestions'
             activeStyle={activeStyling}>
             Saved Questions
