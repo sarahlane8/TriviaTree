@@ -16,9 +16,9 @@
 ## Overview
 For this project, I targeted a niche audience and created a useful, purposeful application for them.  Through the pandemic, students had to learn remotely and their caregivers often had to juggle working from home full time and supporting the students in their learning.  I created an app that families could use at the dinner table to test their knowledge, learn new information, and have fun together!
 
-<img width="250" height="400" alt="Screen Shot 2021-06-10 at 8 44 10 PM" src="https://user-images.githubusercontent.com/70901622/121623349-c3f64300-ca2c-11eb-8d6d-13bed214c938.png">
+<img width="250" height="400" alt="Wave audit tool score" src="https://user-images.githubusercontent.com/70901622/121623349-c3f64300-ca2c-11eb-8d6d-13bed214c938.png">
 
-<img width="250" alt="Screen Shot 2021-06-10 at 8 43 50 PM" src="https://user-images.githubusercontent.com/70901622/121623347-c2c51600-ca2c-11eb-8143-a1d23dd6b323.png">
+<img width="250" alt="lighthouse accessibility score" src="https://user-images.githubusercontent.com/70901622/121623347-c2c51600-ca2c-11eb-8143-a1d23dd6b323.png">
 
 - Deployed [LINK](//)
 - [Project Spec](https://frontend.turing.edu/projects/module-3/niche-audience.html)
@@ -31,7 +31,12 @@ For this project, I targeted a niche audience and created a useful, purposeful a
 - Work within time constraints to deliver a product for my niche audience
 
 ## Features
-Add features with gifs here
+Users can view a question cards, and can click and hold the card to view the answer.
+
+Users can save a question card for review later.  By clicking the same button, the card is no longer saved.
+
+Users can view all their saved cards together, and can also unsave cards from that view.
+
 
 ## Technologies Used
 * ![React](https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB)
