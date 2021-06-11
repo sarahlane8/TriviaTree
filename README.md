@@ -14,15 +14,21 @@
       - [Project Managers](#project-managers)
 
 ## Overview
-Add overview here
+For this project, I targeted a niche audience and created a useful, purposeful application for them.  Through the pandemic, students had to learn remotely and their caregivers often had to juggle working from home full time and supporting the students in their learning.  I created an app that families could use at the dinner table to test their knowledge, learn new information, and have fun together!
 
-Add screen shot of scores here(accessibility/SEO, etc)
+<img width="250" height="400" alt="Screen Shot 2021-06-10 at 8 44 10 PM" src="https://user-images.githubusercontent.com/70901622/121623349-c3f64300-ca2c-11eb-8d6d-13bed214c938.png">
+
+<img width="250" alt="Screen Shot 2021-06-10 at 8 43 50 PM" src="https://user-images.githubusercontent.com/70901622/121623347-c2c51600-ca2c-11eb-8143-a1d23dd6b323.png">
 
 - Deployed [LINK](//)
-- Project Spec [LINK](//)
+- [Project Spec](https://frontend.turing.edu/projects/module-3/niche-audience.html)
+- [User Persona](https://docs.google.com/document/d/1P5sTtujMO2NMPCnaeIbICrfeQQFhVdl0Po_0-8tIWG0/edit?usp=sharing)
+- [User Persona](https://docs.google.com/document/d/1-4nDxuX5lRJHXh-PK_dbw6nK-B80jVT-ADEygnu1qyY/edit?usp=sharing)
 
 ## Learning Goals
-- Add learning goals here
+- Demonstrate mastery with React, React Router, asynchronous JavaScript, and end to end testing with Cypress
+- Create User Personas to target my niche audience
+- Work within time constraints to deliver a product for my niche audience
 
 ## Features
 Add features with gifs here
