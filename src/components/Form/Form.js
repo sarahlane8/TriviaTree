@@ -12,12 +12,30 @@ class Form extends Component {
     }
   }
 
+  handleChange = (event) => {
+    this.setState({category: event.target.value}, () => console.log(this.state.category))
+  }
 
   render() {
     const { getQuestions } = this.props
     return (
       <div className='questions-form'>
       <h2>Click the button for questions!</h2>
+      <form>
+        <label>
+        Choose your category:
+          <select
+            value={this.state.category}
+            onChange={this.handleChange}>
+            <option value='general knowledge'>General Knowledge</option>
+            <option value='science and nature'>Science and Nature</option>
+            <option value='mythology'>Mythology</option>
+            <option value='geography'>Geography</option>
+            <option value='animals'>Animals</option>
+            <option value='history'>History</option>
+          </select>
+        </label>
+      </form>
       <Link to='/questions'>
       <button onClick={ () => getQuestions() }>QUIZ ME!</button>
       </Link>
