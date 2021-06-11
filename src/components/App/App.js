@@ -69,11 +69,14 @@ class App extends Component {
             exact path='/questions'
             render={ () => {
               return(
-                <Questions
-                  questions={this.state.questions}
-                  saveQuestion={this.saveQuestion}
-                  deleteQuestion={this.deleteQuestion}
-                />
+                <div>
+                  {!this.state.questions.length && <h2 className='error-msg'>Sorry, we can't find your questions!</h2>}
+                  <Questions
+                    questions={this.state.questions}
+                    saveQuestion={this.saveQuestion}
+                    deleteQuestion={this.deleteQuestion}
+                  />
+                </div>
               )
             }}
           />
@@ -83,7 +86,7 @@ class App extends Component {
             render={ () => {
               return(
                 <div className='questions-grid-error'>
-                  {!this.state.savedQuestions.length && <h2>You don't have any saved questions yet!</h2>}
+                  {!this.state.savedQuestions.length && <h2>You don't have any saved questions!</h2>}
                   <Questions
                     questions={this.state.savedQuestions}
                     saveQuestion={this.saveQuestion}
