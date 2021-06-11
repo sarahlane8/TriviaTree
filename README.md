@@ -32,10 +32,13 @@ For this project, I targeted a niche audience and created a useful, purposeful a
 
 ## Features
 Users can view a question cards, and can click and hold the card to view the answer.
+![Demo of Viewing Cards and Answers](https://media.giphy.com/media/3PShOFitz8sF4oCAdY/giphy.gif)
 
 Users can save a question card for review later.  By clicking the same button, the card is no longer saved.
+![Demo of saving cards for later](https://media.giphy.com/media/JxNWj973DhMNUkM1XP/giphy.gif)
 
-Users can view all their saved cards together, and can also unsave cards from that view.
+Users can view all their saved cards together, and can also un-save cards from that view.
+![Demo of saved cards view](https://media.giphy.com/media/Rpnx5Vp83IVksPv8rC/giphy.gif)
 
 
 ## Technologies Used
