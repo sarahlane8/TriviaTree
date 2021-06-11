@@ -20,7 +20,6 @@ class App extends Component {
 
   fetchQuestions = async (category) => {
     try {
-      console.log(category)
       const response = await getQuestions(category)
       this.setState({ questions: response })
     } catch (err) {
