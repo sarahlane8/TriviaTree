@@ -1,9 +1,11 @@
-import { filterQuestionsData } from './cleaningFunctions'
+import { filterQuestionsData, findCategoryNumber } from './cleaningFunctions'
 
 
-export const getQuestions = async () => {
+export const getQuestions = async (category) => {
+  console.log('getQuestions', category)
+  const catNum = findCategoryNumber(category)
   try {
-    const response = await fetch('https://opentdb.com/api.php?amount=10&category=19&type=boolean')
+    const response = await fetch(`https://opentdb.com/api.php?amount=10&category=${catNum}&difficulty=easy`)
     const checkedResponse = await checkResponse(response)
     const filteredQuestions = filterQuestionsData(checkedResponse)
     return filteredQuestions

@@ -8,12 +8,12 @@ class Form extends Component {
   constructor() {
     super()
     this.state = {
-      category: ''
+      category: 'general knowledge'
     }
   }
 
   handleChange = (event) => {
-    this.setState({category: event.target.value}, () => console.log(this.state.category))
+    this.setState({category: event.target.value}, () => console.log(16, this.state.category))
   }
 
   render() {
@@ -21,7 +21,7 @@ class Form extends Component {
     return (
       <div className='questions-form'>
       <h2>Click the button for questions!</h2>
-      <form>
+      <div>
         <label>
         Choose your category:
           <select
@@ -29,15 +29,16 @@ class Form extends Component {
             onChange={this.handleChange}>
             <option value='general knowledge'>General Knowledge</option>
             <option value='science and nature'>Science and Nature</option>
+            <option value='math'>Math</option>
             <option value='mythology'>Mythology</option>
             <option value='geography'>Geography</option>
             <option value='animals'>Animals</option>
             <option value='history'>History</option>
           </select>
         </label>
-      </form>
+      </div>
       <Link to='/questions'>
-      <button onClick={ () => getQuestions() }>QUIZ ME!</button>
+      <button onClick={ () => getQuestions(this.state.category) }>QUIZ ME!</button>
       </Link>
       </div>
     )
