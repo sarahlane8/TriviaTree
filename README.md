@@ -68,10 +68,12 @@ After completing the steps above to clone the repo:
 
 ## Project Reflection
 
-- Reflection
+- This project was an opportunity for me to demonstrate my mastery of React and Cypress, while highlighting my problem solving skills and ability to produce DRY code. I am proud of this work and my growth as a developer!
 
 ## Future Iterations
-Add iterations here
+- Users will be able to filter questions by difficulty level
+- Users will be able to filter questions by true/false or multiple choice questions
+- Users will be able to add comments to the question cards for their review
 
 ## Credits
 #### Authors
