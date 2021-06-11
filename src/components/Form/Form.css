@@ -1,26 +1,48 @@
 .questions-form {
-  padding-top: 50px;
-}
-
-
-.questions-form > h2 {
+  padding: 50px;
   font-size: 50px;
-  color: #D6EDFF
+  color: #D6EDFF;
+  display: flex;
+  flex-direction: column;
+  font-weight: bolder;
 }
 
 
 .questions-form > a > button {
-  padding: 40px 60px;
+  /* width: 250px; */
+  padding: 30px 50px;
   font-size: 35px;
   margin: 15px;
   border-radius: 10px;
   background-color: #D6EDFF;
   color: #478978;
-  font-weight: bolder;
 }
 
 
 .questions-form > a > button:hover {
   background-color: #478978;
   color: #D6EDFF;
+}
+
+
+.selections {
+  background-color: #D6EDFF;
+  color: #478978;
+  font-size: 35px;
+  padding: 15px;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+
+
+label {
+  padding: 100px;
+  text-align-last: center;
+}
+
+
+.questions-form > a {
+  align-self: center;
+  display: block;
+  width: 200px;
 }

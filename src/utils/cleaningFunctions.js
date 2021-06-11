@@ -9,3 +9,29 @@ export const filterQuestionsData = (rawData) => {
   })
   return filteredQuestions
 }
+
+export const findCategoryNumber = (category) => {
+  let catNum;
+  if (category === 'general knowledge') {
+    catNum = 9
+  }
+  if (category === 'science and nature') {
+    catNum = 17
+  }
+  if (category === 'mythology') {
+    catNum = 20
+  }
+  if (category === 'math') {
+    catNum = 19
+  }
+  if (category === 'geography') {
+    catNum = 22
+  }
+  if (category === 'animals') {
+    catNum = 27
+  }
+  if (category === 'history') {
+    catNum = 23
+  }
+  return catNum;
+}
