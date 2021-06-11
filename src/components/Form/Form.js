@@ -21,10 +21,11 @@ class Form extends Component {
     return (
       <div className='questions-form'>
       <h2>Click the button for questions!</h2>
-      <div>
+
         <label>
         Choose your category:
           <select
+            className='selections'
             value={this.state.category}
             onChange={this.handleChange}>
             <option value='general knowledge'>General Knowledge</option>
@@ -36,9 +37,9 @@ class Form extends Component {
             <option value='history'>History</option>
           </select>
         </label>
-      </div>
+
       <Link to='/questions'>
-      <button onClick={ () => getQuestions(this.state.category) }>QUIZ ME!</button>
+        <button onClick={ () => getQuestions(this.state.category) }>QUIZ ME!</button>
       </Link>
       </div>
     )

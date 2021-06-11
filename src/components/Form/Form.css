@@ -32,3 +32,10 @@
   margin-left: 10px;
   border-radius: 10px;
 }
+
+
+.questions-form > a {
+  align-self: center;
+  display: block;
+  width: 200px;
+}
