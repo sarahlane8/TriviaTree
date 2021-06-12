@@ -33,7 +33,7 @@ Cypress.Commands.add('loadQuiz', () => {
   cy.get('.questions-form > a > button').click()
 })
 
-Cypress.Commands.add('SimulateFetchFail', () => {
+Cypress.Commands.add('simulateFetchFail', () => {
   cy.intercept('https://opentdb.com/api.php?amount=12&category=9&difficulty=easy',
     {
       "response_code": 2,

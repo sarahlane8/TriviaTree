@@ -9,15 +9,9 @@ describe('Error Handling', () => {
   })
 
   it('Should tell the user if the fetch failed', () => {
-    cy.intercept('https://opentdb.com/api.php?amount=12&category=9&difficulty=easy',
-      {
-      "response_code": 2,
-      "results": []
-      })
+    cy.simulateFetchFail()
     cy.loadQuiz()
       .get('.questions-error-msg').should('contain', 'Sorry, we can\'t find your questions!')
-    })
-
-
+  })
 
 })
