@@ -24,11 +24,20 @@ Cypress.Commands.add('fetchQuestions', () => {
           ]
         }
       ]
-
-    })
+    }
+  )
 })
 
 Cypress.Commands.add('loadQuiz', () => {
   cy.visit('http://localhost:3000')
-    cy.get('.questions-form > a > button').click()
+  cy.get('.questions-form > a > button').click()
+})
+
+Cypress.Commands.add('SimulateFetchFail', () => {
+  cy.intercept('https://opentdb.com/api.php?amount=12&category=9&difficulty=easy',
+    {
+      "response_code": 2,
+      "results": []
+    }
+  )
 })
