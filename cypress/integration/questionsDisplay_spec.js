@@ -49,5 +49,12 @@ describe('Questions Display', () => {
       .get('.flip-card > button').eq(1).should('contain', 'Save Question')
   })
 
-  
+  it('Should reveal the answer to a question on click and hold of a card', () => {
+    cy.get('.flip-card').eq(0).get('.question-card').should('be.visible')
+      .get('.flip-card').eq(0).should('contain', 'True')//THIS LINE IS TRUE ALL THE TIME
+      .get('.flip-card').eq(0).get('.answer').should('not.be.visible')
+      .get('.flip-card').eq(0).trigger('mousedown', {release: false} )
+      // .get('.flip-card').eq(0).get('.answer').should('be.visible')
+  })
+
 })
