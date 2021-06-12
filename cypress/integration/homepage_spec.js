@@ -29,7 +29,7 @@ describe('Homepage', () => {
   })
 
   it('Should route the user to saved questions if they click the saved questions nav link', () => {
-    cy.get('.nav-links > li > a').eq(2).should('contain', 'Questions').click()
+    cy.get('.nav-links > li > a').eq(2).should('contain', 'Saved Questions').click()
       .url().should('eq', 'http://localhost:3000/savedQuestions')
   })
 
