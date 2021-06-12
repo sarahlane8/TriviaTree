@@ -1,5 +1,5 @@
 Cypress.Commands.add('fetchQuestions', () => {
-  cy.intercept('https://opentdb.com/api.php?amount=10&category=19&type=boolean',
+  cy.intercept('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy',
     {
       "response_code": 0,
       "results": [
@@ -24,11 +24,20 @@ Cypress.Commands.add('fetchQuestions', () => {
           ]
         }
       ]
-
-    })
+    }
+  )
 })
 
 Cypress.Commands.add('loadQuiz', () => {
   cy.visit('http://localhost:3000')
-    cy.get('.questions-form > a > button').click()
+  cy.get('.questions-form > a > button').click()
+})
+
+Cypress.Commands.add('simulateFetchFail', () => {
+  cy.intercept('https://opentdb.com/api.php?amount=12&category=9&difficulty=easy',
+    {
+      "response_code": 2,
+      "results": []
+    }
+  )
 })

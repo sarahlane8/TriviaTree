@@ -70,7 +70,7 @@ class App extends Component {
             render={ () => {
               return(
                 <div>
-                  {!this.state.questions.length && <h2 className='error-msg'>Sorry, we can't find your questions!</h2>}
+                  {!this.state.questions.length && <h2 className='questions-error-msg'>Sorry, we can't find your questions!</h2>}
                   <Questions
                     questions={this.state.questions}
                     saveQuestion={this.saveQuestion}

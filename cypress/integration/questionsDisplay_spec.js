@@ -2,18 +2,18 @@ describe('Questions Display', () => {
   beforeEach( () => {
     cy.fetchQuestions()
     cy.loadQuiz()
-
   })
 
   it('Should display the question cards in a grid', () => {
-     cy.url().should('eq', 'http://localhost:3000/questions')
+    cy.url().should('eq', 'http://localhost:3000/questions')
 
     cy.get('.nav-bar').should('be.visible')
       .get('img').should('be.visible')
       .get('.nav-bar > h1').should('contain', 'Trivia Tree')
-      .get('.nav-links > li').should('have.length', 2)
+      .get('.nav-links > li').should('have.length', 3)
       .get('.nav-links > li > a').eq(0).should('contain', 'Home')
-      .get('.nav-links > li > a').eq(1).should('contain', 'Saved Questions')
+      .get('.nav-links > li > a').eq(1).should('contain', 'Questions')
+      .get('.nav-links > li > a').eq(2).should('contain', 'Saved Questions')
 
     cy.get('.questions-grid').should('be.visible')
       .get('.flip-card').should('have.length', 2)
@@ -48,4 +48,10 @@ describe('Questions Display', () => {
       .get('.flip-card > button').eq(1).click()
       .get('.flip-card > button').eq(1).should('contain', 'Save Question')
   })
+
+  it('Should only show the user the question on the card', () => {
+    cy.get('.flip-card').eq(0).get('.question-card').should('be.visible')
+      .get('.flip-card').eq(0).get('.answer').should('not.be.visible')
+  })
+  
 })
