@@ -13,7 +13,7 @@ class Form extends Component {
   }
 
   handleChange = (event) => {
-    this.setState({category: event.target.value}, () => console.log(16, this.state.category))
+    this.setState( {category: event.target.value} )
   }
 
   render() {
