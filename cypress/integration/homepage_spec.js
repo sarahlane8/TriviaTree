@@ -23,4 +23,21 @@ describe('Homepage', () => {
       .get('.questions-form > a > button').should('contain', 'QUIZ ME!')
   })
 
+  it('Should route the user to questions if they click the questions nav link', () => {
+    cy.get('.nav-links > li > a').eq(1).should('contain', 'Questions').click()
+      .url().should('eq', 'http://localhost:3000/questions')
+  })
+
+  it('Should route the user to saved questions if they click the saved questions nav link', () => {
+    cy.get('.nav-links > li > a').eq(2).should('contain', 'Questions').click()
+      .url().should('eq', 'http://localhost:3000/savedQuestions')
+  })
+
+  it('Should route the user to home if they click the home nav link', () => {
+    cy.get('.nav-links > li > a').eq(1).should('contain', 'Questions').click()
+      .url().should('eq', 'http://localhost:3000/questions')
+      .get('.nav-links > li > a').eq(0).should('contain', 'Home').click()
+      .url().should('eq', 'http://localhost:3000/')
+  })
+
 })
