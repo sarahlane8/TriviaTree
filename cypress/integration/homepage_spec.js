@@ -16,7 +16,10 @@ describe('Homepage', () => {
 
   it('Should display the form', () => {
     cy.get('.questions-form').should('be.visible')
-      .get('.questions-form > h2').should('contain', 'Click the button for questions!')
+      .get('.questions-form > label').should('contain', 'Choose a category:')
+      .get('.selections').should('have.value', 'general knowledge')
+      .get('.selections').select('Mythology')
+      .get('.selections').should('have.value', 'mythology')
       .get('.questions-form > a > button').should('contain', 'QUIZ ME!')
   })
 
