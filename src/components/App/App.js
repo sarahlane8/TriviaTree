@@ -28,10 +28,10 @@ class App extends Component {
   }
 
   saveQuestion = id => {
-    const question = this.toggleIsSaved(id)
-    const newQuestionToSave = this.state.savedQuestions.find(savedQuestion => question.id === savedQuestion.id)
-    if (!newQuestionToSave) {
-      this.setState( {savedQuestions: [...this.state.savedQuestions, question]} )
+    const questionToSave = this.toggleIsSaved(id)
+    const isQuestionAlreadySaved = this.state.savedQuestions.find(savedQuestion => questionToSave.id === savedQuestion.id)
+    if (!isQuestionAlreadySaved) {
+      this.setState( {savedQuestions: [...this.state.savedQuestions, questionToSave]} )
     }
   }
 
