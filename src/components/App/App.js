@@ -79,7 +79,7 @@ class App extends Component {
             render={ () => {
               return(
                 <div>
-                  {this.state.loading && <h2>Loading your questions!</h2>}
+                  {this.state.loading && <h2 className='loading-msg'>Loading your questions!</h2>}
                   {this.state.error && <h2 className='questions-error-msg'>Sorry, we can't find your questions!</h2>}
                   <Questions
                     questions={this.state.questions}
