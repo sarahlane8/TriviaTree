@@ -14,11 +14,11 @@ const QuestionCard = ({ deleteQuestion, saveQuestion, id, isSaved, question, ans
     return {__html: clean }
   }
 
-  const whichStar = isSaved ? '⭐️ Saved! ⭐️' : 'Save Question'
+  const buttonText = isSaved ? '⭐️ Saved! ⭐️' : 'Save Question'
 
   return(
     <div className='flip-card' >
-      <button onClick={handleClick}>{whichStar}</button>
+      <button onClick={handleClick}>{buttonText}</button>
       <div className='flip-card-inner'>
         <article className='question-card'>
           <p dangerouslySetInnerHTML={createMarkUpData(question) } />
