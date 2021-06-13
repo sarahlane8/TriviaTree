@@ -14,14 +14,17 @@ class App extends Component {
     this.state = {
       questions: [],
       savedQuestions: [],
-      error: null
+      error: null,
+      loading: false
     }
   }
 
   fetchQuestions = async (category) => {
     try {
+      this.setState({ loading: true });
       const response = await getQuestions(category)
       this.setState( {questions: response} )
+      this.setState({ loading: false });
     } catch (err) {
       this.setState( {error: err} )
     }
@@ -49,7 +52,6 @@ class App extends Component {
     const index = questions.findIndex(question => question.id === id)
     return index
   }
-
 
   deleteQuestion = id => {
     this.toggleIsSaved(id)
