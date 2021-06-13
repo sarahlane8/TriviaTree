@@ -5,16 +5,16 @@ import './Questions.css'
 
 const Questions = ({ questions, saveQuestion, deleteQuestion }) => {
 
-  const questionCards = questions.map((question, index) => {
+  const questionCards = questions.map(question => {
     return(
       <QuestionCard
         key={question.id}
-        id={question.id}
-        question={question.question}
         answer={question.answer}
-        saveQuestion={saveQuestion}
         deleteQuestion={deleteQuestion}
+        id={question.id}
         isSaved={question.isSaved}
+        question={question.question}
+        saveQuestion={saveQuestion}
       />
     )
   })
