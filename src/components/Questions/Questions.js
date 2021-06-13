@@ -14,7 +14,7 @@ const Questions = ({ questions, saveQuestion, deleteQuestion }) => {
         answer={question.answer}
         saveQuestion={saveQuestion}
         deleteQuestion={deleteQuestion}
-        isFavorited={question.isFavorited}
+        isSaved={question.isSaved}
       />
     )
   })
@@ -31,7 +31,7 @@ Questions.propTypes = {
     id: PropTypes.number,
     question: PropTypes.string,
     answer: PropTypes.string,
-    isFavorited: PropTypes.bool
+    isSaved: PropTypes.bool
   })).isRequired,
   saveQuestion: PropTypes.func.isRequired,
   deleteQuestion: PropTypes.func.isRequired

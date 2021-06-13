@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import './QuestionCard.css'
 
 
-const QuestionCard = ({ deleteQuestion, saveQuestion, id, isFavorited, question, answer }) => {
+const QuestionCard = ({ deleteQuestion, saveQuestion, id, isSaved, question, answer }) => {
 
   const handleClick = () => {
-    isFavorited ? deleteQuestion(id) : saveQuestion(id)
+    isSaved ? deleteQuestion(id) : saveQuestion(id)
   }
 
   const createMarkUpData = (data) => {
@@ -14,7 +14,7 @@ const QuestionCard = ({ deleteQuestion, saveQuestion, id, isFavorited, question,
     return {__html: clean }
   }
 
-  const whichStar = isFavorited ? '⭐️ Saved! ⭐️' : 'Save Question'
+  const whichStar = isSaved ? '⭐️ Saved! ⭐️' : 'Save Question'
 
   return(
     <div className='flip-card' >
