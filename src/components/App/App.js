@@ -37,7 +37,7 @@ class App extends Component {
 
   toggleIsSaved = id => {
     const allQuestions = this.state.questions
-    const index = allQuestions.findIndex(question => question.id === id)
+    const index = this.findIndexOfQuestion(id, allQuestions)
     if (index !== -1) {
       allQuestions[index].isSaved = !allQuestions[index].isSaved
     }
@@ -45,7 +45,10 @@ class App extends Component {
     return allQuestions[index]
   }
 
-
+  findIndexOfQuestion = (id, questions) => {
+    const index = questions.findIndex(question => question.id === id)
+    return index
+  }
 
 
   deleteQuestion = id => {
