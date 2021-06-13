@@ -4,7 +4,7 @@ export const filterQuestionsData = rawData => {
       id: Date.now()+index,
       question: question.question,
       answer: question.correct_answer,
-      isFavorited: false
+      isSaved: false
     }
   })
   return filteredQuestions

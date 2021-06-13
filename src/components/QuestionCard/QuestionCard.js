@@ -37,7 +37,7 @@ QuestionCard.propTypes = {
   answer: PropTypes.string.isRequired,
   saveQuestion: PropTypes.func.isRequired,
   deleteQuestion: PropTypes.func.isRequired,
-  isFavorited: PropTypes.bool.isRequired
+  isSaved: PropTypes.bool.isRequired
 }
 
 export default QuestionCard
