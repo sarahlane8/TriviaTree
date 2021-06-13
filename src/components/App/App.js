@@ -14,7 +14,7 @@ class App extends Component {
     this.state = {
       questions: [],
       savedQuestions: [],
-      error: ''
+      error: null
     }
   }
 
