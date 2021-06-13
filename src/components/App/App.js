@@ -12,10 +12,10 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      questions: [],
-      savedQuestions: [],
       error: null,
-      loading: false
+      loading: false,
+      questions: [],
+      savedQuestions: []
     }
   }
 
@@ -82,9 +82,9 @@ class App extends Component {
                   {this.state.loading && <h2 className='loading-msg'>Loading your questions!</h2>}
                   {this.state.error && <h2 className='questions-error-msg'>Sorry, we can't find your questions!</h2>}
                   <Questions
+                    deleteQuestion={this.deleteQuestion}
                     questions={this.state.questions}
                     saveQuestion={this.saveQuestion}
-                    deleteQuestion={this.deleteQuestion}
                   />
                 </div>
               )
@@ -98,9 +98,9 @@ class App extends Component {
                 <div className='questions-grid-error'>
                   {!this.state.savedQuestions.length && <h2>You don't have any saved questions!</h2>}
                   <Questions
+                    deleteQuestion={this.deleteQuestion}
                     questions={this.state.savedQuestions}
                     saveQuestion={this.saveQuestion}
-                    deleteQuestion={this.deleteQuestion}
                   />
                 </div>
               )
