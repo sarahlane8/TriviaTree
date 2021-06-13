@@ -18,7 +18,7 @@ const QuestionCard = ({ deleteQuestion, saveQuestion, id, isFavorited, question,
 
   return(
     <div className='flip-card' >
-      <button onClick={ () => handleClick() }>{whichStar}</button>
+      <button onClick={handleClick}>{whichStar}</button>
       <div className='flip-card-inner'>
         <article className='question-card'>
           <p dangerouslySetInnerHTML={createMarkUpData(question) } />
