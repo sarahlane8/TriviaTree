@@ -1,6 +1,6 @@
-import './QuestionCard.css'
 import DOMPurify from 'dompurify'
 import PropTypes from 'prop-types'
+import './QuestionCard.css'
 
 
 const QuestionCard = ({ deleteQuestion, saveQuestion, id, isFavorited, question, answer }) => {
