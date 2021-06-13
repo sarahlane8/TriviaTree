@@ -5,7 +5,7 @@ import NavBar from '../NavBar/NavBar'
 import Form from '../Form/Form'
 import Questions from '../Questions/Questions'
 import NoMatch from '../NoMatch/NoMatch'
-import { getQuestions } from '../../utils/apiCalls'
+import { getQuestions } from '../../utils/apiCalls/apiCalls'
 
 
 class App extends Component {

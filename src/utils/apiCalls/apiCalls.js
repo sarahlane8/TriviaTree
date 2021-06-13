@@ -1,4 +1,4 @@
-import { filterQuestionsData, findCategoryNumber } from './cleaningFunctions'
+import { filterQuestionsData, findCategoryNumber } from '../utilities'
 
 
 export const getQuestions = async (category) => {
