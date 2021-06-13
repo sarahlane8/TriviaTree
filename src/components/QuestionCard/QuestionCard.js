@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import './QuestionCard.css'
 
 
-const QuestionCard = ({ deleteQuestion, saveQuestion, id, isSaved, question, answer }) => {
+const QuestionCard = ({ answer, deleteQuestion, id, isSaved, question, saveQuestion }) => {
 
   const handleClick = () => {
     isSaved ? deleteQuestion(id) : saveQuestion(id)
@@ -32,12 +32,12 @@ const QuestionCard = ({ deleteQuestion, saveQuestion, id, isSaved, question, ans
 }
 
 QuestionCard.propTypes = {
-  id: PropTypes.number.isRequired,
-  question: PropTypes.string.isRequired,
   answer: PropTypes.string.isRequired,
-  saveQuestion: PropTypes.func.isRequired,
   deleteQuestion: PropTypes.func.isRequired,
-  isSaved: PropTypes.bool.isRequired
+  id: PropTypes.number.isRequired,
+  isSaved: PropTypes.bool.isRequired,
+  question: PropTypes.string.isRequired,
+  saveQuestion: PropTypes.func.isRequired
 }
 
 export default QuestionCard
