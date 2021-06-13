@@ -48,7 +48,7 @@ class Form extends Component {
 
 
 Form.propTypes = {
-  getQuestions: PropTypes.func
+  getQuestions: PropTypes.func.isRequired
 }
 
 export default Form
