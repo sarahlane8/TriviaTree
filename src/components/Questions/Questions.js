@@ -27,12 +27,12 @@ const Questions = ({ questions, saveQuestion, deleteQuestion }) => {
 }
 
 Questions.propTypes = {
-  questions: PropTypes.arrayof(PropTypes.shape({
+  questions: PropTypes.shape({
     id: PropTypes.number,
     question: PropTypes.string,
     answer: PropTypes.string,
     isFavorited: PropTypes.bool
-  })).isRequired,
+  }).isRequired,
   saveQuestion: PropTypes.func.isRequired,
   deleteQuestion: PropTypes.func.isRequired
 }
