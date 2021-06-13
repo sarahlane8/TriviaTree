@@ -11,7 +11,7 @@ export const filterQuestionsData = rawData => {
   return filteredQuestions
 }
 
-export const findCategoryNumber = category => {
+const findCategoryNumber = category => {
   switch(category) {
     case 'science and nature':
       return 17

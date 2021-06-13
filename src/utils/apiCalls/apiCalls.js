@@ -1,4 +1,4 @@
-import { filterQuestionsData, findCategoryNumber } from '../utilities'
+import { filterQuestionsData } from '../utilities'
 
 
 export const getQuestions = async (category) => {
@@ -10,6 +10,25 @@ export const getQuestions = async (category) => {
     return filteredQuestions
   } catch (err) {
     throw Error(err.message)
+  }
+}
+
+const findCategoryNumber = category => {
+  switch(category) {
+    case 'science and nature':
+      return 17
+    case 'mythology':
+      return 20
+    case 'math':
+      return 19
+    case 'geography':
+      return 22
+    case 'animals':
+      return 27
+    case 'history':
+      return 23
+    default:
+      return 9
   }
 }
 
