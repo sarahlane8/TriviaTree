@@ -32,12 +32,12 @@ const QuestionCard = ({ deleteQuestion, saveQuestion, id, isFavorited, question,
 }
 
 QuestionCard.propTypes = {
-  id: PropTypes.number,
-  question: PropTypes.string,
-  answer: PropTypes.string,
-  saveQuestion: PropTypes.func,
-  deleteQuestion: PropTypes.func,
-  isFavorited: PropTypes.bool
+  id: PropTypes.number.isRequired,
+  question: PropTypes.string.isRequired,
+  answer: PropTypes.string.isRequired,
+  saveQuestion: PropTypes.func.isRequired,
+  deleteQuestion: PropTypes.func.isRequired,
+  isFavorited: PropTypes.bool.isRequired
 }
 
 export default QuestionCard
