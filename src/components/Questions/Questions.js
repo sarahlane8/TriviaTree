@@ -27,9 +27,14 @@ const Questions = ({ questions, saveQuestion, deleteQuestion }) => {
 }
 
 Questions.propTypes = {
-  questions: PropTypes.array,
-  saveQuestion: PropTypes.func,
-  deleteQuestion: PropTypes.func
+  questions: PropTypes.arrayof(PropTypes.shape({
+    id: PropTypes.number,
+    question: PropTypes.string,
+    answer: PropTypes.string,
+    isFavorited: PropTypes.bool
+  })).isRequired,
+  saveQuestion: PropTypes.func.isRequired,
+  deleteQuestion: PropTypes.func.isRequired
 }
 
 export default Questions
