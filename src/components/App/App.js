@@ -1,4 +1,3 @@
-import './App.css';
 import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
 import NavBar from '../NavBar/NavBar'
@@ -6,6 +5,7 @@ import Form from '../Form/Form'
 import Questions from '../Questions/Questions'
 import NoMatch from '../NoMatch/NoMatch'
 import { getQuestions } from '../../utils/apiCalls/apiCalls'
+import './App.css';
 
 
 class App extends Component {
