@@ -1,6 +1,6 @@
-import './Questions.css'
-import QuestionCard from '../QuestionCard/QuestionCard'
 import PropTypes from 'prop-types';
+import QuestionCard from '../QuestionCard/QuestionCard'
+import './Questions.css'
 
 
 const Questions = ({ questions, saveQuestion, deleteQuestion }) => {
