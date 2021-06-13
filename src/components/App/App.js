@@ -28,18 +28,18 @@ class App extends Component {
   }
 
   saveQuestion = id => {
-    const question = this.toggleIsFavorited(id)
+    const question = this.toggleIsSaved(id)
     const newQuestionToSave = this.state.savedQuestions.find(savedQuestion => question.id === savedQuestion.id)
     if (!newQuestionToSave) {
       this.setState( {savedQuestions: [...this.state.savedQuestions, question]} )
     }
   }
 
-  toggleIsFavorited = id => {
+  toggleIsSaved = id => {
     const allQuestions = this.state.questions
     const index = allQuestions.findIndex(question => question.id === id)
     if (index !== -1) {
-      allQuestions[index].isFavorited = !allQuestions[index].isFavorited
+      allQuestions[index].isSaved = !allQuestions[index].isSaved
     }
     this.setState({questions: allQuestions})
     return allQuestions[index]
@@ -49,7 +49,7 @@ class App extends Component {
 
 
   deleteQuestion = id => {
-    this.toggleIsFavorited(id)
+    this.toggleIsSaved(id)
     const filteredSavedQuestions = this.state.savedQuestions.filter(question => question.id !== id)
     this.setState( {savedQuestions: filteredSavedQuestions} )
   }
