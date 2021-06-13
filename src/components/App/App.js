@@ -21,10 +21,9 @@ class App extends Component {
 
   fetchQuestions = async (category) => {
     try {
-      this.setState({ loading: true });
+      this.setState( {loading: true, questions: []} );
       const response = await getQuestions(category)
-      this.setState( {questions: response} )
-      this.setState({ loading: false });
+      this.setState( {loading: false, questions: response} )
     } catch (err) {
       this.setState( {error: err} )
     }
@@ -80,7 +79,8 @@ class App extends Component {
             render={ () => {
               return(
                 <div>
-                  {!this.state.questions.length && <h2 className='questions-error-msg'>Sorry, we can't find your questions!</h2>}
+                  {this.state.loading && <h2>Loading your questions!</h2>}
+                  {this.state.error && <h2 className='questions-error-msg'>Sorry, we can't find your questions!</h2>}
                   <Questions
                     questions={this.state.questions}
                     saveQuestion={this.saveQuestion}
