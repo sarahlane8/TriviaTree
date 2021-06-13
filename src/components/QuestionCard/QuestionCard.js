@@ -1,12 +1,12 @@
-import './QuestionCard.css'
 import DOMPurify from 'dompurify'
 import PropTypes from 'prop-types'
+import './QuestionCard.css'
 
 
-const QuestionCard = ({ deleteQuestion, saveQuestion, id, isFavorited, question, answer }) => {
+const QuestionCard = ({ answer, deleteQuestion, id, isSaved, question, saveQuestion }) => {
 
   const handleClick = () => {
-    isFavorited ? deleteQuestion(id) : saveQuestion(id)
+    isSaved ? deleteQuestion(id) : saveQuestion(id)
   }
 
   const createMarkUpData = (data) => {
@@ -14,11 +14,11 @@ const QuestionCard = ({ deleteQuestion, saveQuestion, id, isFavorited, question,
     return {__html: clean }
   }
 
-  const whichStar = isFavorited ? '⭐️ Saved! ⭐️' : 'Save Question'
+  const buttonText = isSaved ? '⭐️ Saved! ⭐️' : 'Save Question'
 
   return(
     <div className='flip-card' >
-      <button onClick={ () => handleClick() }>{whichStar}</button>
+      <button onClick={handleClick}>{buttonText}</button>
       <div className='flip-card-inner'>
         <article className='question-card'>
           <p dangerouslySetInnerHTML={createMarkUpData(question) } />
@@ -32,12 +32,12 @@ const QuestionCard = ({ deleteQuestion, saveQuestion, id, isFavorited, question,
 }
 
 QuestionCard.propTypes = {
-  id: PropTypes.number,
-  question: PropTypes.string,
-  answer: PropTypes.string,
-  saveQuestion: PropTypes.func,
-  deleteQuestion: PropTypes.func,
-  isFavorited: PropTypes.bool
+  answer: PropTypes.string.isRequired,
+  deleteQuestion: PropTypes.func.isRequired,
+  id: PropTypes.number.isRequired,
+  isSaved: PropTypes.bool.isRequired,
+  question: PropTypes.string.isRequired,
+  saveQuestion: PropTypes.func.isRequired
 }
 
 export default QuestionCard

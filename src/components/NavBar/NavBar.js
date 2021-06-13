@@ -1,14 +1,15 @@
-import './NavBar.css'
-import treeIconSrc from '../../utils/treeIconSrc'
 import { NavLink } from 'react-router-dom'
+import treeIconSrc from '../../utils/assets/treeIconSrc'
+import './NavBar.css'
+
+
+const activeStyling = {
+  textDecoration: 'underline',
+  textDecorationColor: '#DE5476',
+  color: 'inherit'
+}
 
 const NavBar = () => {
-
-  const activeStyling = {
-    textDecoration: 'underline',
-    textDecorationColor: '#DE5476',
-    color: 'inherit'
-  }
 
   return(
     <nav className='nav-bar'>
