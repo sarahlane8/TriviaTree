@@ -14,4 +14,10 @@ describe('Error Handling', () => {
       .get('.questions-error-msg').should('contain', 'Sorry, we can\'t find your questions!')
   })
 
+  it('Should tell the user if they reload the page and don\'t have any questions anymore', () => {
+    cy.loadQuiz()
+      .reload()
+      .get('.questions-error-msg').should('contain', 'Sorry, we can\'t find your questions!')
+  })
+  
 })
