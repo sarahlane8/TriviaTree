@@ -71,7 +71,7 @@ After completing the steps above to clone the repo:
 
 ## Project Reflection
 
-- This project was an opportunity for me to demonstrate my mastery of React and Cypress, while highlighting my problem solving skills and ability to produce DRY code. I am proud of this work and my growth as a developer!
+- This project was an opportunity for me to demonstrate my mastery of React and Cypress, while highlighting my problem solving skills and ability to produce DRY code. I spent a lot of time refactoring existing code and researching new CSS techniques.  I am proud of this work and my growth as a developer!
 
 ## Future Iterations
 - Users will be able to filter questions by difficulty level
