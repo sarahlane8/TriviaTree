@@ -53,5 +53,5 @@ describe('Questions Display', () => {
     cy.get('.flip-card').eq(0).get('.question-card').should('be.visible')
       .get('.flip-card').eq(0).get('.answer').should('not.be.visible')
   })
-  
+
 })
