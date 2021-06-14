@@ -6,10 +6,8 @@
   overflow: scroll;
 }
 
-.questions-error-msg,
-.user-msg,
-.loading-msg,
-.questions-grid-error > h2 {
+
+.msg {
   font-size: 50px;
   color: #D6EDFF
 }

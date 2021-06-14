@@ -80,10 +80,10 @@ class App extends Component {
               const errorMsg = 'Sorry, we can\'t find your questions!'
               return(
                 <div>
-                  {this.state.loading && !this.state.error && <h2 className='loading-msg'>Loading your questions!</h2>}
-                  {!this.state.loading && !this.state.error && this.state.questions.length && <h2 className='user-msg'>Click and hold a card to view the answer!</h2>}
-                  {this.state.error && <h2 className='questions-error-msg'>{errorMsg}</h2>}
-                  {!this.state.questions.length && !this.state.loading && <h2 className='questions-error-msg'>{errorMsg}</h2>}
+                  {this.state.loading && !this.state.error && <h2 className='msg'>Loading your questions!</h2>}
+                  {!this.state.loading && !this.state.error && this.state.questions.length && <h2 className='msg'>Click and hold a card to view the answer!</h2>}
+                  {this.state.error && <h2 className='msg'>{errorMsg}</h2>}
+                  {!this.state.questions.length && !this.state.loading && <h2 className='msg'>{errorMsg}</h2>}
                   <Questions
                     deleteQuestion={this.deleteQuestion}
                     questions={this.state.questions}
@@ -99,7 +99,7 @@ class App extends Component {
             render={ () => {
               return(
                 <div className='questions-grid-error'>
-                  {!this.state.savedQuestions.length && <h2>You don't have any saved questions!</h2>}
+                  {!this.state.savedQuestions.length && <h2 className='msg'>You don't have any saved questions!</h2>}
                   <Questions
                     deleteQuestion={this.deleteQuestion}
                     questions={this.state.savedQuestions}
