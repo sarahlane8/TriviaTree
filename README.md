@@ -7,7 +7,7 @@
   - [Features](#features)
   - [Technologies Used](#technologies-used)
   - [Setup Instructions](#setup-instructions)
-  - [Project Reflection](#project-reflection-and-individual-learning-goals)
+  - [Project Reflection](#project-reflection)
   - [Future Iterations](#future-iterations)
   - [Credits](#credits)
       - [Authors](#authors)
