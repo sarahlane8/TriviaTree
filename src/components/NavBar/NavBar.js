@@ -10,7 +10,6 @@ const activeStyling = {
 }
 
 const NavBar = () => {
-
   return(
     <nav className='nav-bar'>
       <img src={treeIconSrc} alt='cartoon tree' />
