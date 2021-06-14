@@ -27,7 +27,7 @@ describe('SavedQuestionsDisplay', () => {
 
   it('Should tell the user if they don\'t have any saved questions yet', () => {
     cy.get('.nav-links > li > a').eq(2).click()
-    .get('h2').should('be.visible').should('contain', 'You don\'t have any saved questions!')
+      .get('h2').should('be.visible').should('contain', 'You don\'t have any saved questions!')
   })
 
   it('Should remove a question when I click on the button from the saved questions display', () => {
