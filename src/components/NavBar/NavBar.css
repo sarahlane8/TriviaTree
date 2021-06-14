@@ -43,10 +43,14 @@ a {
 }
 
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 1126px) {
   .nav-links {
     flex-direction: column;
     justify-content: center;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
   }
 }
 
@@ -57,9 +61,5 @@ a {
   }
   .nav-bar > h1 {
     margin: 0;
-  }
-  ul {
-    margin: 0;
-    padding: 0;
   }
 }
