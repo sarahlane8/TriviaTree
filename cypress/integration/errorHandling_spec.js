@@ -11,13 +11,13 @@ describe('Error Handling', () => {
   it('Should tell the user if the fetch failed', () => {
     cy.simulateFetchFail()
     cy.loadQuiz()
-      .get('.questions-error-msg').should('contain', 'Sorry, we can\'t find your questions!')
+      .get('.msg').should('contain', 'Sorry, we can\'t find your questions!')
   })
 
   it('Should tell the user if they reload the questions page and don\'t have any questions anymore', () => {
     cy.loadQuiz()
       .reload()
-      .get('.questions-error-msg').should('contain', 'Sorry, we can\'t find your questions!')
+      .get('.msg').should('contain', 'Sorry, we can\'t find your questions!')
   })
 
   it('Should tell the user if they reload the saved questions page and don\t have any saved questions anymore', () => {
@@ -27,5 +27,5 @@ describe('Error Handling', () => {
       .reload()
       .get('h2').should('be.visible').should('contain', 'You don\'t have any saved questions!')
   })
-  
+
 })
