@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import treeIconSrc from '../../utils/assets/treeIconSrc'
+import { treeIconSrc } from '../../utils/assets/treeIconSrc'
 import './NavBar.css'
 
 
