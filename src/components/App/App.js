@@ -77,10 +77,12 @@ class App extends Component {
           <Route
             exact path='/questions'
             render={ () => {
+              const errorMsg = 'Sorry, we can\'t find your questions!'
               return(
                 <div>
                   {this.state.loading && !this.state.error && <h2 className='loading-msg'>Loading your questions!</h2>}
-                  {this.state.error && <h2 className='questions-error-msg'>Sorry, we can't find your questions!</h2>}
+                  {this.state.error && <h2 className='questions-error-msg'>{errorMsg}</h2>}
+                  {!this.state.questions.length && !this.state.loading && <h2 className='questions-error-msg'>{errorMsg}</h2>}
                   <Questions
                     deleteQuestion={this.deleteQuestion}
                     questions={this.state.questions}
