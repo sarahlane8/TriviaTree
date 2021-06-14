@@ -20,8 +20,6 @@ class Form extends Component {
     const { getQuestions } = this.props
     return (
       <div className='questions-form'>
-
-
         <label>
         Choose a category:
           <select
@@ -37,7 +35,6 @@ class Form extends Component {
             <option value='history'>History</option>
           </select>
         </label>
-
       <Link to='/questions'>
         <button onClick={ () => getQuestions(this.state.category) }>QUIZ ME!</button>
       </Link>
@@ -45,7 +42,6 @@ class Form extends Component {
     )
   }
 }
-
 
 Form.propTypes = {
   getQuestions: PropTypes.func.isRequired

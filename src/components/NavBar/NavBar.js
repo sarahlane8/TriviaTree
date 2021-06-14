@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import treeIconSrc from '../../utils/assets/treeIconSrc'
+import { treeIconSrc } from '../../utils/assets/treeIconSrc'
 import './NavBar.css'
 
 
@@ -10,7 +10,6 @@ const activeStyling = {
 }
 
 const NavBar = () => {
-
   return(
     <nav className='nav-bar'>
       <img src={treeIconSrc} alt='cartoon tree' />
