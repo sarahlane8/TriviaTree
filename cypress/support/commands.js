@@ -1,5 +1,5 @@
 Cypress.Commands.add('fetchQuestions', () => {
-  cy.intercept('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy',
+  cy.intercept('https://opentdb.com/api.php?amount=12&category=9&difficulty=easy',
     {
       "response_code": 0,
       "results": [
