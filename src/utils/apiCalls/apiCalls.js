@@ -42,7 +42,7 @@ const checkResponse = response => {
   handleStatusError(response.status)
 }
 
-const handleStatusError = (status) => {
+const handleStatusError = status => {
   if (status === 404) {
     throw Error('Sorry, page not found!')
   }
