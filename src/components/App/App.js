@@ -81,7 +81,6 @@ class App extends Component {
               return(
                 <div>
                   {this.state.loading && !this.state.error && <h2 className='msg'>Loading your questions!</h2>}
-                  {!this.state.loading && !this.state.error && this.state.questions.length && <h2 className='msg'>Click and hold a card to view the answer!</h2>}
                   {this.state.error && <h2 className='msg'>{errorMsg}</h2>}
                   {!this.state.questions.length && !this.state.loading && <h2 className='msg'>{errorMsg}</h2>}
                   <Questions
