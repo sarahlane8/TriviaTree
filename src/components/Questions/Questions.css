@@ -8,11 +8,11 @@
   align-items: center;
 }
 
+
 .error-msg {
   font-size: 50px;
   color: #D6EDFF
 }
-
 
 
 @media only screen and (max-width: 1385px) {
