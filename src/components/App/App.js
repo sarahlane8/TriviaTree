@@ -30,21 +30,26 @@ class App extends Component {
   }
 
   saveQuestion = id => {
-    const questionToSave = this.toggleIsSaved(id)
-    const isQuestionAlreadySaved = this.state.savedQuestions.find(savedQuestion => questionToSave.id === savedQuestion.id)
-    if (!isQuestionAlreadySaved) {
-      this.setState( {savedQuestions: [...this.state.savedQuestions, questionToSave]} )
+    this.toggleIsSaved(id)
+    const isQuestionAlreadySaved = this.findIndexOfQuestion(id, this.state.savedQuestions)
+    if (isQuestionAlreadySaved === -1) {
+      const questionToSaveIndex = this.findIndexOfQuestion(id, this.state.questions)
+      this.setState( {savedQuestions: [...this.state.savedQuestions, this.state.questions[questionToSaveIndex]] } )
     }
   }
 
   toggleIsSaved = id => {
-    const allQuestions = this.state.questions
-    const index = this.findIndexOfQuestion(id, allQuestions)
-    if (index !== -1) {
-      allQuestions[index].isSaved = !allQuestions[index].isSaved
-    }
-    this.setState({questions: allQuestions})
-    return allQuestions[index]
+    this.setState(prevState => {
+        const updatedQuestions = prevState.questions.map(question => {
+            if (question.id === id) {
+                question.isSaved = !question.isSaved
+            }
+            return question
+        })
+        return {
+            questions: updatedQuestions
+        }
+    })
   }
 
   findIndexOfQuestion = (id, questions) => {
