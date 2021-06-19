@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
 import NavBar from '../NavBar/NavBar'
 import Form from '../Form/Form'
@@ -8,32 +8,37 @@ import { getQuestions } from '../../utils/apiCalls/apiCalls'
 import './App.css';
 
 
-const App = () => {
-  const [ error, setError ] = useState(null)
-  const [ loading, setLoading ] = useState(false)
-  const [ questions, setQuestions ] = useState([])
-  const [ savedQuestions, setSavedQuestions ] = useState([])
+class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      error: null,
+      loading: false,
+      questions: [],
+      savedQuestions: []
+    }
+  }
 
-  const fetchQuestions = async (category) => {
+  fetchQuestions = async (category) => {
     try {
-      setLoading(true), setQuestions([])
+      this.setState( {loading: true, questions: []} );
       const response = await getQuestions(category)
-      setLoading(false), setQuestions(response)
+      this.setState( {loading: false, questions: response} )
     } catch (err) {
-      setError(err)
+      this.setState( {error: err} )
     }
   }
 
-  const saveQuestion = id => {
-    toggleIsSaved(id)
-    const isQuestionAlreadySaved = findIndexOfQuestion(id, savedQuestions)
+  saveQuestion = id => {
+    this.toggleIsSaved(id)
+    const isQuestionAlreadySaved = this.findIndexOfQuestion(id, this.state.savedQuestions)
     if (isQuestionAlreadySaved === -1) {
-      const questionToSaveIndex = findIndexOfQuestion(id, questions)
-      setSavedQuestions(...savedQuestions, questions[questionToSaveIndex])
+      const questionToSaveIndex = this.findIndexOfQuestion(id, this.state.questions)
+      this.setState( {savedQuestions: [...this.state.savedQuestions, this.state.questions[questionToSaveIndex]] } )
     }
   }
 
-  const toggleIsSaved = id => {
+  toggleIsSaved = id => {
     this.setState(prevState => {
         const updatedQuestions = prevState.questions.map(question => {
             if (question.id === id) {
@@ -47,18 +52,18 @@ const App = () => {
     })
   }
 
-  const findIndexOfQuestion = (id, questions) => {
+  findIndexOfQuestion = (id, questions) => {
     const index = questions.findIndex(question => question.id === id)
     return index
   }
 
-  const deleteQuestion = id => {
+  deleteQuestion = id => {
     this.toggleIsSaved(id)
-    const filteredSavedQuestions = savedQuestions.filter(question => question.id !== id)
-    setSavedQuestions(filteredSavedQuestions)
+    const filteredSavedQuestions = this.state.savedQuestions.filter(question => question.id !== id)
+    this.setState( {savedQuestions: filteredSavedQuestions} )
   }
 
-
+  render() {
     return (
       <main className='App'>
         <NavBar />
@@ -69,7 +74,7 @@ const App = () => {
             exact path='/'
             render={ () => {
               return(
-                <Form getQuestions={fetchQuestions} />
+                <Form getQuestions={this.fetchQuestions} />
               )
             }}
           />
@@ -80,13 +85,13 @@ const App = () => {
               const errorMsg = 'Sorry, we can\'t find your questions!'
               return(
                 <div>
-                  {loading && !error && <h2 className='msg'>Loading your questions!</h2>}
-                  {error && <h2 className='msg'>{errorMsg}</h2>}
-                  {!questions.length && !loading && <h2 className='msg'>{errorMsg}</h2>}
+                  {this.state.loading && !this.state.error && <h2 className='msg'>Loading your questions!</h2>}
+                  {this.state.error && <h2 className='msg'>{errorMsg}</h2>}
+                  {!this.state.questions.length && !this.state.loading && <h2 className='msg'>{errorMsg}</h2>}
                   <Questions
-                    deleteQuestion={deleteQuestion}
-                    questions={questions}
-                    saveQuestion={saveQuestion}
+                    deleteQuestion={this.deleteQuestion}
+                    questions={this.state.questions}
+                    saveQuestion={this.saveQuestion}
                   />
                 </div>
               )
@@ -98,11 +103,11 @@ const App = () => {
             render={ () => {
               return(
                 <div className='questions-grid-error'>
-                  {!savedQuestions.length && <h2 className='msg'>You don't have any saved questions!</h2>}
+                  {!this.state.savedQuestions.length && <h2 className='msg'>You don't have any saved questions!</h2>}
                   <Questions
-                    deleteQuestion={deleteQuestion}
-                    questions={savedQuestions}
-                    saveQuestion={saveQuestion}
+                    deleteQuestion={this.deleteQuestion}
+                    questions={this.state.savedQuestions}
+                    saveQuestion={this.saveQuestion}
                   />
                 </div>
               )
@@ -114,7 +119,143 @@ const App = () => {
         </Switch>
       </main>
     )
-  
+  }
 }
 
 export default App;
+
+
+// import React, { useState, useEffect } from 'react'
+// import { Switch, Route } from 'react-router-dom'
+// import NavBar from '../NavBar/NavBar'
+// import Form from '../Form/Form'
+// import Questions from '../Questions/Questions'
+// import NoMatch from '../NoMatch/NoMatch'
+// import { getQuestions } from '../../utils/apiCalls/apiCalls'
+// import './App.css';
+
+
+// const App = () => {
+//   const [ error, setError ] = useState(null)
+//   const [ loading, setLoading ] = useState(false)
+//   const [ questions, setQuestions ] = useState([])
+//   const [ savedQuestions, setSavedQuestions ] = useState([])
+
+//   const fetchQuestions = async (category) => {
+//     try {
+//       setLoading(true) 
+//       setQuestions([])
+//       const response = await getQuestions(category)
+//       setLoading(false)
+//       setQuestions(response)
+//     } catch (err) {
+//       setError(err)
+//     }
+//   }
+
+//   const saveQuestion = id => {
+//     toggleIsSaved(id)
+//     const isQuestionAlreadySaved = findIndexOfQuestion(id, savedQuestions)
+//     if (isQuestionAlreadySaved === -1) {
+//       const questionToSaveIndex = findIndexOfQuestion(id, questions)
+//       setSavedQuestions(...savedQuestions, questions[questionToSaveIndex])
+//     }
+//   }
+
+//   // const toggleIsSaved = id => {
+//   //     setQuestions(prevState => {
+//   //       const updatedQuestions = prevState.questions.map(question => {
+//   //           if (question.id === id) {
+//   //               question.isSaved = !question.isSaved
+//   //           }
+//   //           return question
+//   //       })
+//   //       return updatedQuestions
+//   //   })
+//   // }
+
+//   const toggleIsSaved = id => {
+//     this.setState(prevState => {
+//         const updatedQuestions = prevState.questions.map(question => {
+//             if (question.id === id) {
+//                 question.isSaved = !question.isSaved
+//             }
+//             return question
+//         })
+//         return {
+//             questions: updatedQuestions
+//         }
+//     })
+//   }
+
+//   const findIndexOfQuestion = (id, questions) => {
+//     const index = questions.findIndex(question => question.id === id)
+//     return index
+//   }
+
+//   const deleteQuestion = id => {
+//     this.toggleIsSaved(id)
+//     const filteredSavedQuestions = savedQuestions.filter(question => question.id !== id)
+//     setSavedQuestions(filteredSavedQuestions)
+//   }
+
+
+//     return (
+//       <main className='App'>
+//         <NavBar />
+
+//         <Switch>
+
+//           <Route
+//             exact path='/'
+//             render={ () => {
+//               return(
+//                 <Form getQuestions={fetchQuestions} />
+//               )
+//             }}
+//           />
+
+//           <Route
+//             exact path='/questions'
+//             render={ () => {
+//               const errorMsg = 'Sorry, we can\'t find your questions!'
+//               return(
+//                 <div>
+//                   {loading && !error && <h2 className='msg'>Loading your questions!</h2>}
+//                   {error && <h2 className='msg'>{errorMsg}</h2>}
+//                   {!questions.length && !loading && <h2 className='msg'>{errorMsg}</h2>}
+//                   <Questions
+//                     deleteQuestion={deleteQuestion}
+//                     questions={questions}
+//                     saveQuestion={saveQuestion}
+//                   />
+//                 </div>
+//               )
+//             }}
+//           />
+
+//           <Route
+//             exact path='/savedQuestions'
+//             render={ () => {
+//               return(
+//                 <div className='questions-grid-error'>
+//                   {!savedQuestions.length && <h2 className='msg'>You don't have any saved questions!</h2>}
+//                   <Questions
+//                     deleteQuestion={deleteQuestion}
+//                     questions={savedQuestions}
+//                     saveQuestion={saveQuestion}
+//                   />
+//                 </div>
+//               )
+//             }}
+//           />
+
+//           <Route component={NoMatch} />
+
+//         </Switch>
+//       </main>
+//     )
+  
+// }
+
+// export default App;

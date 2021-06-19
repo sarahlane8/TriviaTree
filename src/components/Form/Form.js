@@ -1,11 +1,16 @@
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import './Form.css'
 
 
-const Form = ({getQuestions}) => {
-  const [ category, setCategory ] = useState('general knowledge')
+const Form = ( {getQuestions}) => {
+  const [category, setCategory ] = useState('general knowledge')
+ 
+
+  const handleChange = (event) => {
+    setCategory(event.target.value)
+  }
 
     return (
       <div className='questions-form'>
@@ -13,10 +18,9 @@ const Form = ({getQuestions}) => {
         <select
           className='selections'
           value={category}
-          onChange={setCategory()}
-          >
-          <option value='general knowledge' onChange={setCategory('general knowledge')}>General Knowledge</option>
-          <option value='science and nature' onChange={setCategory('science and nature')}>Science and Nature</option>
+          onChange={handleChange}>
+          <option value='general knowledge'>General Knowledge</option>
+          <option value='science and nature'>Science and Nature</option>
           <option value='math'>Math</option>
           <option value='mythology'>Mythology</option>
           <option value='geography'>Geography</option>
@@ -28,7 +32,6 @@ const Form = ({getQuestions}) => {
         </Link>
       </div>
     )
-  
 }
 
 Form.propTypes = {
