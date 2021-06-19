@@ -23,6 +23,7 @@ class Form extends Component {
         <label>Choose a category:</label>
         <select
           className='selections'
+          name='categories'
           value={this.state.category}
           onChange={this.handleChange}>
           <option value='general knowledge'>General Knowledge</option>
