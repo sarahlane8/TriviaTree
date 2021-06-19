@@ -6,11 +6,6 @@ import './Form.css'
 
 const Form = ( {getQuestions}) => {
   const [category, setCategory ] = useState('general knowledge')
- 
-
-  // const handleChange = (event) => {
-  //   setCategory(event.target.value)
-  // }
 
     return (
       <div className='questions-form'>
