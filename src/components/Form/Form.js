@@ -8,9 +8,9 @@ const Form = ( {getQuestions}) => {
   const [category, setCategory ] = useState('general knowledge')
  
 
-  const handleChange = (event) => {
-    setCategory(event.target.value)
-  }
+  // const handleChange = (event) => {
+  //   setCategory(event.target.value)
+  // }
 
     return (
       <div className='questions-form'>
@@ -18,7 +18,7 @@ const Form = ( {getQuestions}) => {
         <select
           className='selections'
           value={category}
-          onChange={handleChange}>
+          onChange={ (event) => setCategory(event.target.value)}>
           <option value='general knowledge'>General Knowledge</option>
           <option value='science and nature'>Science and Nature</option>
           <option value='math'>Math</option>
