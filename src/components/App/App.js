@@ -54,8 +54,8 @@ const App = () => {
 
   const deleteQuestion = id => {
     this.toggleIsSaved(id)
-    const filteredSavedQuestions = this.state.savedQuestions.filter(question => question.id !== id)
-    this.setState( {savedQuestions: filteredSavedQuestions} )
+    const filteredSavedQuestions = savedQuestions.filter(question => question.id !== id)
+    setSavedQuestions(filteredSavedQuestions)
   }
 
 
@@ -69,7 +69,7 @@ const App = () => {
             exact path='/'
             render={ () => {
               return(
-                <Form getQuestions={this.fetchQuestions} />
+                <Form getQuestions={fetchQuestions} />
               )
             }}
           />
@@ -80,13 +80,13 @@ const App = () => {
               const errorMsg = 'Sorry, we can\'t find your questions!'
               return(
                 <div>
-                  {this.state.loading && !this.state.error && <h2 className='msg'>Loading your questions!</h2>}
-                  {this.state.error && <h2 className='msg'>{errorMsg}</h2>}
-                  {!this.state.questions.length && !this.state.loading && <h2 className='msg'>{errorMsg}</h2>}
+                  {loading && !error && <h2 className='msg'>Loading your questions!</h2>}
+                  {error && <h2 className='msg'>{errorMsg}</h2>}
+                  {!questions.length && !loading && <h2 className='msg'>{errorMsg}</h2>}
                   <Questions
-                    deleteQuestion={this.deleteQuestion}
-                    questions={this.state.questions}
-                    saveQuestion={this.saveQuestion}
+                    deleteQuestion={deleteQuestion}
+                    questions={questions}
+                    saveQuestion={saveQuestion}
                   />
                 </div>
               )
@@ -98,11 +98,11 @@ const App = () => {
             render={ () => {
               return(
                 <div className='questions-grid-error'>
-                  {!this.state.savedQuestions.length && <h2 className='msg'>You don't have any saved questions!</h2>}
+                  {!savedQuestions.length && <h2 className='msg'>You don't have any saved questions!</h2>}
                   <Questions
-                    deleteQuestion={this.deleteQuestion}
-                    questions={this.state.savedQuestions}
-                    saveQuestion={this.saveQuestion}
+                    deleteQuestion={deleteQuestion}
+                    questions={savedQuestions}
+                    saveQuestion={saveQuestion}
                   />
                 </div>
               )
