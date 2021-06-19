@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Switch, Route } from 'react-router-dom'
 import NavBar from '../NavBar/NavBar'
 import Form from '../Form/Form'
@@ -8,37 +8,32 @@ import { getQuestions } from '../../utils/apiCalls/apiCalls'
 import './App.css';
 
 
-class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      error: null,
-      loading: false,
-      questions: [],
-      savedQuestions: []
-    }
-  }
+const App = () => {
+  const [ error, setError ] = useState(null)
+  const [ loading, setLoading ] = useState(false)
+  const [ questions, setQuestions ] = useState([])
+  const [ savedQuestions, setSavedQuestions ] = useState([])
 
-  fetchQuestions = async (category) => {
+  const fetchQuestions = async (category) => {
     try {
-      this.setState( {loading: true, questions: []} );
+      setLoading(true), setQuestions([])
       const response = await getQuestions(category)
-      this.setState( {loading: false, questions: response} )
+      setLoading(false), setQuestions(response)
     } catch (err) {
-      this.setState( {error: err} )
+      setError(err)
     }
   }
 
-  saveQuestion = id => {
-    this.toggleIsSaved(id)
-    const isQuestionAlreadySaved = this.findIndexOfQuestion(id, this.state.savedQuestions)
+  const saveQuestion = id => {
+    toggleIsSaved(id)
+    const isQuestionAlreadySaved = findIndexOfQuestion(id, savedQuestions)
     if (isQuestionAlreadySaved === -1) {
-      const questionToSaveIndex = this.findIndexOfQuestion(id, this.state.questions)
-      this.setState( {savedQuestions: [...this.state.savedQuestions, this.state.questions[questionToSaveIndex]] } )
+      const questionToSaveIndex = findIndexOfQuestion(id, questions)
+      setSavedQuestions(...savedQuestions, questions[questionToSaveIndex])
     }
   }
 
-  toggleIsSaved = id => {
+  const toggleIsSaved = id => {
     this.setState(prevState => {
         const updatedQuestions = prevState.questions.map(question => {
             if (question.id === id) {
@@ -52,18 +47,18 @@ class App extends Component {
     })
   }
 
-  findIndexOfQuestion = (id, questions) => {
+  const findIndexOfQuestion = (id, questions) => {
     const index = questions.findIndex(question => question.id === id)
     return index
   }
 
-  deleteQuestion = id => {
+  const deleteQuestion = id => {
     this.toggleIsSaved(id)
     const filteredSavedQuestions = this.state.savedQuestions.filter(question => question.id !== id)
     this.setState( {savedQuestions: filteredSavedQuestions} )
   }
 
-  render() {
+
     return (
       <main className='App'>
         <NavBar />
@@ -119,7 +114,7 @@ class App extends Component {
         </Switch>
       </main>
     )
-  }
+  
 }
 
 export default App;
