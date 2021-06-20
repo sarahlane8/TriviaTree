@@ -12,14 +12,8 @@ const Form = ( {getQuestions}) => {
         <label>Choose a category:</label>
         <select
           className='selections'
-<<<<<<< HEAD
-          name='categories'
-          value={this.state.category}
-          onChange={this.handleChange}>
-=======
           value={category}
           onChange={ (event) => setCategory(event.target.value)}>
->>>>>>> main
           <option value='general knowledge'>General Knowledge</option>
           <option value='science and nature'>Science and Nature</option>
           <option value='math'>Math</option>
