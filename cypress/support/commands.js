@@ -41,3 +41,36 @@ Cypress.Commands.add('simulateFetchFail', () => {
     }
   )
 })
+
+
+Cypress.Commands.add('fetchGeographyQuestions', () => {
+  cy.intercept('https://opentdb.com/api.php?amount=12&category=22&difficulty=easy',
+  {
+    "response_code": 0,
+    "results": [
+      {
+        "category": "Geography",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "The Alps are a mountain range on which continent?",
+        "correct_answer": "Europe",
+        "incorrect_answers": [
+          "North America",
+          "Asia",
+          "Africa"
+        ]
+      },
+      {
+        "category": "Geography",
+        "type": "boolean",
+        "difficulty": "easy",
+        "question": "Rhode Island is actually located on the US mainland, despite its name.",
+        "correct_answer": "True",
+        "incorrect_answers": [
+          "False"
+        ]
+      }
+    ]
+   }
+  )
+}) 
