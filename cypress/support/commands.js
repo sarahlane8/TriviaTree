@@ -45,34 +45,32 @@ Cypress.Commands.add('simulateFetchFail', () => {
 
 Cypress.Commands.add('fetchGeographyQuestions', () => {
   cy.intercept('https://opentdb.com/api.php?amount=12&category=22&difficulty=easy',
-    {
-      "response_code ": 0,
-      "results": [
-        {
-          "category": "Geography",
-          "type": "multiple",
-          "difficulty": "easy",
-          "question": "What colour is the circle on the Japanese flag?",
-          "correct_answer": "Red",
-          "incorrect_answers": [
-            "White",
-            "Yellow",
-            "Black"
-          ]
-        },
-        {
-          "category": "Geography",
-          "type": "multiple",
-          "difficulty": "easy",
-          "question": "What is the smallest country in the world?",
-          "correct_answer": "Vatican City",
-          "incorrect_answers": [
-            "Maldives",
-            "Monaco",
-            "Malta"
-          ]
-        }
-      ]
-    }
+  {
+    "response_code": 0,
+    "results": [
+      {
+        "category": "Geography",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "The Alps are a mountain range on which continent?",
+        "correct_answer": "Europe",
+        "incorrect_answers": [
+          "North America",
+          "Asia",
+          "Africa"
+        ]
+      },
+      {
+        "category": "Geography",
+        "type": "boolean",
+        "difficulty": "easy",
+        "question": "Rhode Island is actually located on the US mainland, despite its name.",
+        "correct_answer": "True",
+        "incorrect_answers": [
+          "False"
+        ]
+      }
+    ]
+   }
   )
-})
+}) 
