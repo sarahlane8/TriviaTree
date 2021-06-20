@@ -36,18 +36,15 @@ const App = () => {
     }
   }
 
-
- const toggleIsSaved = id => {
-        const updatedQuestions = questions.map(question => {
-            if (question.id === id) {
-               question.isSaved = !question.isSaved
-           }
-            return question
-       })
-       setQuestions(updatedQuestions)
-      
-    }
-
+  const toggleIsSaved = id => {
+    const updatedQuestions = questions.map(question => {
+      if (question.id === id) {
+        question.isSaved = !question.isSaved
+      }
+      return question
+    })
+    setQuestions(updatedQuestions)
+  }
 
   const findIndexOfQuestion = (id, questions) => {
     const index = questions.findIndex(question => question.id === id)
@@ -59,7 +56,6 @@ const App = () => {
     const filteredSavedQuestions = savedQuestions.filter(question => question.id !== id)
     setSavedQuestions(filteredSavedQuestions)
   }
-
 
     return (
       <main className='App'>
