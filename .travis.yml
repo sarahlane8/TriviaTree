@@ -1,6 +1,8 @@
 language: node_js
 node_js:
-- '12'
+- 'node'
+notifications:
+  email: false
 script:
-- npm run cypress
+- npm test
 - npm run build
